@@ -3,7 +3,7 @@
 echo "########## Compiling your parallel atomic code"
 source /opt/intel/inteloneapi/setvars.sh > /dev/null 2>&1
 # icx -o bin/mandel_parallel_atomic -fopenmp mandel_parallel_atomic.c
-icx -o bin/mandel_parallel_atomic -fopenmp mandel_parallel_atomic.c -O0
+icx -o bin/mandel_parallel_atomic -O0 -fopenmp mandel_parallel_atomic.c
 echo "########## Executing your parallel atomic code"
 ./bin/mandel_parallel_atomic
 echo "########## Done parallel atomic"

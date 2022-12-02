@@ -3,7 +3,7 @@
 echo "########## Compiling the given serial code"
 source /opt/intel/inteloneapi/setvars.sh > /dev/null 2>&1
 # icx -o bin/mandel_serial -fopenmp mandel_serial.c
-icx -o bin/mandel_serial -fopenmp mandel_serial.c -O0
+icx -o bin/mandel_serial -O0 -fopenmp mandel_serial.c
 echo "########## Executing the given serial code"
 ./bin/mandel_serial
 echo "########## Done serial"

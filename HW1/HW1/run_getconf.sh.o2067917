@@ -1,0 +1,31 @@
+
+########################################################################
+#      Date:           Thu 01 Dec 2022 10:32:21 PM PST
+#    Job ID:           2067917.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is checking specifications of a standard CPU Intel DevCloud node
+########################################### getconf -a
+LEVEL1_ICACHE_SIZE                 32768
+LEVEL1_ICACHE_ASSOC                8
+LEVEL1_ICACHE_LINESIZE             64
+LEVEL1_DCACHE_SIZE                 32768
+LEVEL1_DCACHE_ASSOC                8
+LEVEL1_DCACHE_LINESIZE             64
+LEVEL2_CACHE_SIZE                  1048576
+LEVEL2_CACHE_ASSOC                 16
+LEVEL2_CACHE_LINESIZE              64
+LEVEL3_CACHE_SIZE                  20185088
+LEVEL3_CACHE_ASSOC                 11
+LEVEL3_CACHE_LINESIZE              64
+LEVEL4_CACHE_SIZE                  0
+LEVEL4_CACHE_ASSOC                 0
+LEVEL4_CACHE_LINESIZE              0
+
+########################################################################
+# End of output for job 2067917.v-qsvr-1.aidevcloud
+# Date: Thu 01 Dec 2022 10:32:22 PM PST
+########################################################################
+

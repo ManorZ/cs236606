@@ -3,7 +3,7 @@
 echo "########## Compiling your parallel reduction code"
 source /opt/intel/inteloneapi/setvars.sh > /dev/null 2>&1
 # icx -o bin/mandel_parallel_reduction -fopenmp mandel_parallel_reduction.c
-icx -o bin/mandel_parallel_reduction -fopenmp mandel_parallel_reduction.c -O0
+icx -o bin/mandel_parallel_reduction -O0 -fopenmp mandel_parallel_reduction.c
 echo "########## Executing your parallel reduction code"
 ./bin/mandel_parallel_reduction
 echo "########## Done parallel reduction"

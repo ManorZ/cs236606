@@ -3,7 +3,7 @@
 echo "########## Compiling your parallel false_sharing code"
 source /opt/intel/inteloneapi/setvars.sh > /dev/null 2>&1
 # icx -o bin/mandel_parallel_false_sharing -fopenmp mandel_parallel_false_sharing.c
-icx -o bin/mandel_parallel_false_sharing -fopenmp mandel_parallel_false_sharing.c -O0
+icx -o bin/mandel_parallel_false_sharing -O0 -fopenmp mandel_parallel_false_sharing.c
 echo "########## Executing your parallel false_sharing code"
 ./bin/mandel_parallel_false_sharing
 echo "########## Done parallel false_sharing"
