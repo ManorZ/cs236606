@@ -1,0 +1,2 @@
+/var/spool/torque/mom_priv/jobs/2054929.v-qsvr-1.aidevcloud.SC: line 3: syntax error near unexpected token `('
+/var/spool/torque/mom_priv/jobs/2054929.v-qsvr-1.aidevcloud.SC: line 3: `/bin/echo "##" $(whoami) is running HW1 Problem 1 - Calculate Mandelbrot area - parallel padding(PAD=08)'

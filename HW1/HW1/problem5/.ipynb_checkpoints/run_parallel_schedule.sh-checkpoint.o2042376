@@ -1,0 +1,23 @@
+
+########################################################################
+#      Date:           Tue 15 Nov 2022 09:49:41 AM PST
+#    Job ID:           2042376.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 5 - Prime Numbers
+########## Compiling the parallel code
+########## Executing the parallel code
+Number of prime numbers is 3562115 in 55.139579 sec, with 1 threads (static, 8)
+Number of prime numbers is 3562115 in 27.607329 sec, with 2 threads (static, 8) 
+Number of prime numbers is 3562115 in 13.830751 sec, with 4 threads (static, 8) 
+Number of prime numbers is 3562115 in 7.175682 sec, with 8 threads (static, 8) 
+Number of prime numbers is 3562115 in 4.835663 sec, with 16 threads (static, 8) 
+########## Done parallel
+
+########################################################################
+# End of output for job 2042376.v-qsvr-1.aidevcloud
+# Date: Tue 15 Nov 2022 09:51:37 AM PST
+########################################################################
+

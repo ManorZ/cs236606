@@ -1,0 +1,5 @@
+mandel_parallel_critical.c:56:18: error: invalid preprocessing directive
+                #testpoint();
+                 ^
+1 error generated.
+/var/spool/torque/mom_priv/jobs/2054304.v-qsvr-1.aidevcloud.SC: line 9: ./bin/mandel_parallel_critical: No such file or directory

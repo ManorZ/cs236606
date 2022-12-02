@@ -1,0 +1,37 @@
+
+########################################################################
+#      Date:           Thu 24 Nov 2022 07:10:07 AM PST
+#    Job ID:           2054781.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel false_sharing
+########## Compiling your parallel false_sharing code
+########## Executing your parallel false_sharing code
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-False-Sharing implementation - time: 210.474298 seconds, with 1 threads
+
+Area of Mandlebrot set =   0.86672475 +/-   0.00017334
+Parallel-False-Sharing implementation - time: 98.617573 seconds, with 2 threads
+
+Area of Mandlebrot set =   0.32808938 +/-   0.00006562
+Parallel-False-Sharing implementation - time: 30.144335 seconds, with 4 threads
+
+Area of Mandlebrot set =   0.19480117 +/-   0.00003896
+Parallel-False-Sharing implementation - time: 16.379543 seconds, with 8 threads
+
+Area of Mandlebrot set =   0.11308950 +/-   0.00002262
+Parallel-False-Sharing implementation - time: 7.461209 seconds, with 16 threads
+
+Area of Mandlebrot set =   0.08754210 +/-   0.00001751
+Parallel-False-Sharing implementation - time: 6.516266 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel false_sharing
+
+########################################################################
+# End of output for job 2054781.v-qsvr-1.aidevcloud
+# Date: Thu 24 Nov 2022 07:16:32 AM PST
+########################################################################
+

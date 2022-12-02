@@ -1,0 +1,43 @@
+
+########################################################################
+#      Date:           Tue 15 Nov 2022 09:00:38 AM PST
+#    Job ID:           2042332.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 5 - Prime Numbers
+########## Compiling the parallel code
+########## Executing the parallel code
+Number of prime numbers is 3562115 in 55.186320 sec, with 1 threads 
+Number of prime numbers is 3562115 in 34.554892 sec, with 2 threads 
+Number of prime numbers is 3562115 in 18.537169 sec, with 4 threads 
+Number of prime numbers is 3562115 in 9.631764 sec, with 8 threads 
+Number of prime numbers is 3562115 in 5.441234 sec, with 16 threads 
+Number of prime numbers is 3562115 in 55.054896 sec, with 1 threads 
+Number of prime numbers is 3562115 in 34.581313 sec, with 2 threads 
+Number of prime numbers is 3562115 in 18.555245 sec, with 4 threads 
+Number of prime numbers is 3562115 in 9.634384 sec, with 8 threads 
+Number of prime numbers is 3562115 in 6.031447 sec, with 16 threads 
+Number of prime numbers is 3562115 in 55.090993 sec, with 1 threads 
+Number of prime numbers is 3562115 in 27.620516 sec, with 2 threads 
+Number of prime numbers is 3562115 in 13.826532 sec, with 4 threads 
+Number of prime numbers is 3562115 in 6.997109 sec, with 8 threads 
+Number of prime numbers is 3562115 in 4.848742 sec, with 16 threads 
+Number of prime numbers is 3562115 in 55.086151 sec, with 1 threads 
+Number of prime numbers is 3562115 in 27.652851 sec, with 2 threads 
+Number of prime numbers is 3562115 in 13.866090 sec, with 4 threads 
+Number of prime numbers is 3562115 in 6.967400 sec, with 8 threads 
+Number of prime numbers is 3562115 in 4.249884 sec, with 16 threads 
+Number of prime numbers is 3562115 in 55.154932 sec, with 1 threads 
+Number of prime numbers is 3562115 in 55.069345 sec, with 1 threads 
+Number of prime numbers is 3562115 in 55.068357 sec, with 1 threads 
+Number of prime numbers is 3562115 in 55.072441 sec, with 1 threads 
+Number of prime numbers is 3562115 in 55.065404 sec, with 1 threads 
+########## Done parallel
+
+########################################################################
+# End of output for job 2042332.v-qsvr-1.aidevcloud
+# Date: Tue 15 Nov 2022 09:13:17 AM PST
+########################################################################
+

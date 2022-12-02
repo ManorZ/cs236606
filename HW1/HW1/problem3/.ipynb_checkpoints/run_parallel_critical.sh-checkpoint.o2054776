@@ -1,0 +1,37 @@
+
+########################################################################
+#      Date:           Thu 24 Nov 2022 07:08:04 AM PST
+#    Job ID:           2054776.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel critical
+########## Compiling your parallel critical code
+########## Executing your parallel critical code
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Critical implementation - time: 122.244330 seconds, with 1 threads
+
+Area of Mandlebrot set =   1.50815385 +/-   0.00030163
+Parallel-Critical implementation - time: 104.179480 seconds, with 2 threads
+
+Area of Mandlebrot set =   1.50926265 +/-   0.00030185
+Parallel-Critical implementation - time: 55.779968 seconds, with 4 threads
+
+Area of Mandlebrot set =   1.50952005 +/-   0.00030190
+Parallel-Critical implementation - time: 34.498293 seconds, with 8 threads
+
+Area of Mandlebrot set =   1.50966585 +/-   0.00030193
+Parallel-Critical implementation - time: 19.527472 seconds, with 16 threads
+
+Area of Mandlebrot set =   1.50922350 +/-   0.00030184
+Parallel-Critical implementation - time: 14.694171 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel critical
+
+########################################################################
+# End of output for job 2054776.v-qsvr-1.aidevcloud
+# Date: Thu 24 Nov 2022 07:14:01 AM PST
+########################################################################
+

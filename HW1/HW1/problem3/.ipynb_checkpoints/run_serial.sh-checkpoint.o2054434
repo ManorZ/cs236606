@@ -1,0 +1,21 @@
+
+########################################################################
+#      Date:           Thu 24 Nov 2022 03:12:59 AM PST
+#    Job ID:           2054434.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - serial
+########## Compiling the given serial code
+########## Executing the given serial code
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Serial implementation - time: 210.458616 seconds
+(Correct answer should be around 1.506)
+########## Done serial
+
+########################################################################
+# End of output for job 2054434.v-qsvr-1.aidevcloud
+# Date: Thu 24 Nov 2022 03:16:36 AM PST
+########################################################################
+

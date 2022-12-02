@@ -1,0 +1,37 @@
+
+########################################################################
+#      Date:           Thu 24 Nov 2022 10:28:39 AM PST
+#    Job ID:           2054931.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel reduction
+########## Compiling your parallel reduction code
+########## Executing your parallel reduction code
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Reduction implementation - time: 210.470642 seconds, with 1 threads
+
+Area of Mandlebrot set =   1.96486808 +/-   0.00039297
+Parallel-Reduction implementation - time: 112.283267 seconds, with 2 threads
+
+Area of Mandlebrot set =   2.94630322 +/-   0.00058926
+Parallel-Reduction implementation - time: 42.560882 seconds, with 4 threads
+
+Area of Mandlebrot set =   3.98895052 +/-   0.00079779
+Parallel-Reduction implementation - time: 26.996938 seconds, with 8 threads
+
+Area of Mandlebrot set =   4.56024533 +/-   0.00091205
+Parallel-Reduction implementation - time: 16.214900 seconds, with 16 threads
+
+Area of Mandlebrot set =   4.64033925 +/-   0.00092807
+Parallel-Reduction implementation - time: 9.505689 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel reduction
+
+########################################################################
+# End of output for job 2054931.v-qsvr-1.aidevcloud
+# Date: Thu 24 Nov 2022 10:35:43 AM PST
+########################################################################
+

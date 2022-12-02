@@ -1,0 +1,38 @@
+
+########################################################################
+#      Date:           Thu 24 Nov 2022 10:43:52 AM PST
+#    Job ID:           2054953.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel padding(PAD=16)
+########## Compiling your parallel padding code
+########## Executing your parallel padding code
+sizeof(numoutside_per_thread[0][0]) = 4
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-16-Padding implementation - time: 210.438692 seconds, with 1 threads
+
+Area of Mandlebrot set =   1.04639423 +/-   0.00020928
+Parallel-16-Padding implementation - time: 107.818921 seconds, with 2 threads
+
+Area of Mandlebrot set =   0.61511850 +/-   0.00012302
+Parallel-16-Padding implementation - time: 42.451612 seconds, with 4 threads
+
+Area of Mandlebrot set =   0.32507348 +/-   0.00006501
+Parallel-16-Padding implementation - time: 24.089648 seconds, with 8 threads
+
+Area of Mandlebrot set =   0.15854175 +/-   0.00003171
+Parallel-16-Padding implementation - time: 9.590189 seconds, with 16 threads
+
+Area of Mandlebrot set =   0.12092400 +/-   0.00002418
+Parallel-16-Padding implementation - time: 7.785516 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel padding
+
+########################################################################
+# End of output for job 2054953.v-qsvr-1.aidevcloud
+# Date: Thu 24 Nov 2022 10:50:40 AM PST
+########################################################################
+

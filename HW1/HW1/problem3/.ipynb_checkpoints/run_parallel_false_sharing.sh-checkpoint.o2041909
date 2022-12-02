@@ -1,0 +1,85 @@
+
+########################################################################
+#      Date:           Tue 15 Nov 2022 12:59:37 AM PST
+#    Job ID:           2041909.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel false_sharing
+########## Compiling your parallel false_sharing code
+########## Executing your parallel false_sharing code
+numoutside_per_thread before:
+-----------------------------
+0, 
+numoutside = 0 (before)
+numoutside_per_thread after:
+----------------------------
+18299380, 
+numoutside = 18299380 (before)
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+
+ serial implementation - time: 123.102130 seconds, with 1 threads
+numoutside_per_thread before:
+-----------------------------
+0, 0, 
+numoutside = 0 (before)
+numoutside_per_thread after:
+----------------------------
+11524278, 6775102, 
+numoutside = 18299380 (before)
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+
+ serial implementation - time: 105.105349 seconds, with 2 threads
+numoutside_per_thread before:
+-----------------------------
+0, 0, 0, 0, 
+numoutside = 0 (before)
+numoutside_per_thread after:
+----------------------------
+6245283, 5278995, 3194164, 3580938, 
+numoutside = 18299380 (before)
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+
+ serial implementation - time: 56.087073 seconds, with 4 threads
+numoutside_per_thread before:
+-----------------------------
+0, 0, 0, 0, 0, 0, 0, 0, 
+numoutside = 0 (before)
+numoutside_per_thread after:
+----------------------------
+3122687, 3122596, 2745516, 2533479, 1943210, 1250954, 1244650, 2336288, 
+numoutside = 18299380 (before)
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+
+ serial implementation - time: 34.401400 seconds, with 8 threads
+numoutside_per_thread before:
+-----------------------------
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+numoutside = 0 (before)
+numoutside_per_thread after:
+----------------------------
+1562487, 1560200, 1562378, 1560218, 1485475, 1260041, 1208763, 1324716, 1127743, 815467, 717140, 533814, 522607, 722043, 857749, 1478539, 
+numoutside = 18299380 (before)
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+
+ serial implementation - time: 19.038301 seconds, with 16 threads
+numoutside_per_thread before:
+-----------------------------
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+numoutside = 0 (before)
+numoutside_per_thread after:
+----------------------------
+1041658, 1041662, 1039368, 1041549, 1041626, 1039420, 995720, 933658, 816138, 802504, 824009, 906966, 803659, 630383, 509168, 486482, 456110, 308362, 297719, 456300, 490631, 535311, 764113, 1036864, 
+numoutside = 18299380 (before)
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+
+ serial implementation - time: 13.623208 seconds, with 24 threads
+(Correct answer should be around 1.506)
+########## Done parallel false_sharing
+
+########################################################################
+# End of output for job 2041909.v-qsvr-1.aidevcloud
+# Date: Tue 15 Nov 2022 01:05:37 AM PST
+########################################################################
+
