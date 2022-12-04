@@ -1,0 +1,60 @@
+
+########################################################################
+#      Date:           Sat 03 Dec 2022 08:57:51 AM PST
+#    Job ID:           2070004.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 5 - Prime Numbers
+########## Compiling the parallel code
+########## Executing the parallel code
+Number of prime numbers is 3562115 in 136.776707 sec, with 1 threads (default)
+Number of prime numbers is 3562115 in 85.910039 sec, with 2 threads (default)
+Number of prime numbers is 3562115 in 46.085028 sec, with 4 threads (default)
+Number of prime numbers is 3562115 in 23.794013 sec, with 8 threads (default)
+Number of prime numbers is 3562115 in 12.097293 sec, with 16 threads (default)
+Number of prime numbers is 3562115 in 8.508406 sec, with 24 threads (default)
+Number of prime numbers is 3562115 in 136.746688 sec, with 1 threads (static)
+Number of prime numbers is 3562115 in 85.914006 sec, with 2 threads (static)
+Number of prime numbers is 3562115 in 46.086205 sec, with 4 threads (static)
+Number of prime numbers is 3562115 in 23.793134 sec, with 8 threads (static)
+Number of prime numbers is 3562115 in 12.119104 sec, with 16 threads (static)
+Number of prime numbers is 3562115 in 8.462103 sec, with 24 threads (static)
+Number of prime numbers is 3562115 in 136.818107 sec, with 1 threads (static, 4)
+Number of prime numbers is 3562115 in 68.454512 sec, with 2 threads (static, 4)
+Number of prime numbers is 3562115 in 34.270701 sec, with 4 threads (static, 4)
+Number of prime numbers is 3562115 in 17.162989 sec, with 8 threads (static, 4)
+Number of prime numbers is 3562115 in 9.062153 sec, with 16 threads (static, 4)
+Number of prime numbers is 3562115 in 8.900563 sec, with 24 threads (static, 4)
+Number of prime numbers is 3562115 in 136.857332 sec, with 1 threads (static, 8)
+Number of prime numbers is 3562115 in 68.463357 sec, with 2 threads (static, 8) 
+Number of prime numbers is 3562115 in 34.242952 sec, with 4 threads (static, 8) 
+Number of prime numbers is 3562115 in 17.176854 sec, with 8 threads (static, 8) 
+Number of prime numbers is 3562115 in 9.073446 sec, with 16 threads (static, 8) 
+Number of prime numbers is 3562115 in 6.857887 sec, with 24 threads (static, 8) 
+Number of prime numbers is 3562115 in 136.801235 sec, with 1 threads (dynamic, 8)
+Number of prime numbers is 3562115 in 68.579838 sec, with 2 threads (dynamic, 8)
+Number of prime numbers is 3562115 in 34.292200 sec, with 4 threads (dynamic, 8)
+Number of prime numbers is 3562115 in 17.164987 sec, with 8 threads (dynamic, 8)
+Number of prime numbers is 3562115 in 8.884173 sec, with 16 threads (dynamic, 8)
+Number of prime numbers is 3562115 in 6.183885 sec, with 24 threads (dynamic, 8)
+Number of prime numbers is 3562115 in 136.883272 sec, with 1 threads (guided)
+Number of prime numbers is 3562115 in 68.440827 sec, with 2 threads (guided)
+Number of prime numbers is 3562115 in 34.239273 sec, with 4 threads (guided)
+Number of prime numbers is 3562115 in 17.139186 sec, with 8 threads (guided)
+Number of prime numbers is 3562115 in 8.854256 sec, with 16 threads (guided)
+Number of prime numbers is 3562115 in 6.112899 sec, with 24 threads (guided)
+Number of prime numbers is 3562115 in 136.807484 sec, with 1 threads (guided, 8)
+Number of prime numbers is 3562115 in 68.461612 sec, with 2 threads (guided, 8)
+Number of prime numbers is 3562115 in 34.235130 sec, with 4 threads (guided, 8)
+Number of prime numbers is 3562115 in 17.139708 sec, with 8 threads (guided, 8)
+Number of prime numbers is 3562115 in 8.845895 sec, with 16 threads (guided, 8)
+Number of prime numbers is 3562115 in 6.106248 sec, with 24 threads (guided, 8)
+########## Done parallel
+
+########################################################################
+# End of output for job 2070004.v-qsvr-1.aidevcloud
+# Date: Sat 03 Dec 2022 09:31:18 AM PST
+########################################################################
+

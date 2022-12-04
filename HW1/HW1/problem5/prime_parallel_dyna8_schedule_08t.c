@@ -29,6 +29,6 @@ int main( )
       if (check_prime(i)) sum++;
    }
     
-   printf("Number of prime numbers is %d in %f sec, with %d threads \n", sum, omp_get_wtime() - start_time, NTHREADS);
+   printf("Number of prime numbers is %d in %f sec, with %d threads (dynamic, 8)\n", sum, omp_get_wtime() - start_time, NTHREADS);
    return 0;
 }
