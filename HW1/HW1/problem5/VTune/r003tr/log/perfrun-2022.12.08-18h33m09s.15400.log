@@ -1,0 +1,106 @@
+120 [23648] INFO perfrun.launcher <> - Launcher main begin
+128 [23648] INFO perfrun.launcher <> - MessageCatalogInit finished
+128 [23648] INFO perfrun.launcher <> - Launcher instance created
+128 [23648] INFO perfrun.launcher <> - argc = 7; cmdline = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\amplxe-runss.exe --ui-output-format xml --ui-output-fd 1276 --option-file C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\config\runss.options 
+145 [23648] INFO perfrun.launcher <> - New signal handler callback was added
+259 [23648] INFO perfrun.launcher <> - create msngr2::ICliToolContext
+260 [23648] INFO perfrun.launcher <> - create file finder object
+260 [23648] INFO perfrun.launcher <> - create a result directory: pattern = C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr pid = 4294967295
+268 [23648] INFO perfrun.launcher <> - create data directory = C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0
+270 [23648] INFO perfrun.launcher <> - Creating the master collection flag
+288 [23648] INFO perfrun.launcher <> - Done creating the master collection flag
+288 [9504] INFO perfrun.launcher <> - plugin [remoteplug] was disabled because it doesn't support the given collection type.
+288 [9504] INFO perfrun.sdk <> - Allocating TMU :C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0\systemcollector-15400-NV-6CV77D3.sc
+289 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+298 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+298 [9504] INFO perfrun.launcher <> - plugin [gpu] was disabled because it doesn't support the given collection type.
+298 [9504] INFO perfrun.launcher <> - plugin [etw.kernel] was disabled because it doesn't support the given collection type.
+298 [9504] INFO perfrun.launcher <> - plugin [etw.dx] was disabled because it doesn't support the given collection type.
+298 [9504] INFO perfrun.launcher <> - plugin [etw.wsa] was disabled because it doesn't support the given collection type.
+298 [9504] INFO perfrun.mrte <> - system-wide mode is 0
+299 [9504] INFO perfrun.mrte <> - Getting  mrte profiling environment ...
+356 [9504] INFO perfrun.mrte <> - INTEL_MRTE_DATA_DIR=C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0
+356 [9504] INFO perfrun.mrte <> - INTEL_MRTE_HOST_NAME=NV-6CV77D3
+356 [9504] INFO perfrun.mrte <> - JAVA_TOOL_OPTIONS=-agentlib:amplxe_tpssmrte_javaprof_1.0
+356 [9504] INFO perfrun.mrte <> - PATH=C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\runtime;C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\runtime;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files\PuTTY\;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\Git\cmd;C:\Program Files\Graphviz\bin;C:\Program Files\MATLAB\R2022b\bin;C:\Users\manorz\AppData\Local\Microsoft\WindowsApps;C:\msys64\mingw64\bin;;C:\Users\manorz\AppData\Local\Programs\Microsoft VS Code\bin
+356 [9504] INFO perfrun.mrte <> - COR_ENABLE_PROFILING=1
+356 [9504] INFO perfrun.mrte <> - COR_PROFILER={AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+356 [9504] INFO perfrun.mrte <> - COMPLUS_ProfAPI_ProfilerCompatibilitySetting=EnableV2Profiler
+356 [9504] INFO perfrun.mrte <> - CORECLR_ENABLE_PROFILING=1
+356 [9504] INFO perfrun.mrte <> - CORECLR_PROFILER={AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+356 [9504] INFO perfrun.mrte <> - CORECLR_PROFILER_PATH=C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64/amplxe_samplingmrte_clrprof_1.0.dll
+356 [9504] INFO perfrun.mrte <> - INTEL_MRTE_PROFILER_MODE=mixed
+356 [9504] INFO perfrun.mrte <> - Data directory: C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0
+356 [9504] INFO perfrun.mrte <> - Mrte plugin is initialized
+356 [9504] INFO perfrun.launcher <> - plugin [emon] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.launcher <> - plugin [cuscol] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.launcher <> - plugin [stdsrc] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.launcher <> - plugin [sep] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.launcher <> - plugin [vtsspp] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.launcher <> - plugin [aoclprofile] was disabled because it doesn't support the given collection type.
+356 [9504] INFO perfrun.tpss <> - initialize tpss controller
+356 [9504] INFO perfrun.tpss <> - configure collection mode: value = cpu:counters:nostack
+356 [9504] INFO perfrun.tpss <> - configure collection mode: value = cpu:stack
+356 [9504] INFO perfrun.tpss <> - configure collection mode: value = threading:stack
+356 [9504] INFO perfrun.tpss <> - configure collection mode: value = waiting:stack
+356 [9504] INFO perfrun.tpss <> - configure collection mode: value = io:stack
+356 [9504] INFO perfrun.tpss <> - default obj-size-min=1024
+356 [9504] INFO perfrun.tpss <> - default hash-table-size=0
+357 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [power] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [hwloc] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [ipmwatch] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [os_counters] was disabled because it doesn't support the given collection type.
+357 [9504] INFO perfrun.launcher <> - plugin [l0_metrics] was disabled because it doesn't support the given collection type.
+357 [23648] INFO perfrun.launcher <> - set environment variable: PATH = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\runtime;C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\runtime;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files\PuTTY\;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\Git\cmd;C:\Program Files\Graphviz\bin;C:\Program Files\MATLAB\R2022b\bin;C:\Users\manorz\AppData\Local\Microsoft\WindowsApps;C:\msys64\mingw64\bin;;C:\Users\manorz\AppData\Local\Programs\Microsoft VS Code\bin
+357 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_LIBITTNOTIFY32 = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\runtime\ittnotify_collector.dll
+358 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_LIBITTNOTIFY64 = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\runtime\ittnotify_collector.dll
+358 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_ITTNOTIFY_GROUPS = 
+358 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_JIT_PROFILER32 = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\runtime\ittnotify_collector.dll
+358 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_JIT_PROFILER64 = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\runtime\ittnotify_collector.dll
+358 [23648] INFO perfrun.launcher <> - set environment variable: OMP_TOOL_LIBRARIES = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\runtime\ittnotify_collector.dll;C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\runtime\ittnotify_collector.dll
+358 [23648] INFO perfrun.launcher <> - set environment variable: ENABLE_JITPROFILING = 1
+359 [23648] INFO perfrun.launcher <> - set environment variable: CL_CONFIG_USE_VTUNE = True
+359 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_MRTE_DATA_DIR = C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0
+359 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_MRTE_HOST_NAME = NV-6CV77D3
+359 [23648] INFO perfrun.launcher <> - set environment variable: JAVA_TOOL_OPTIONS = -agentlib:amplxe_tpssmrte_javaprof_1.0
+359 [23648] INFO perfrun.launcher <> - set environment variable: PATH = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\runtime;C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\runtime;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files\PuTTY\;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\Git\cmd;C:\Program Files\Graphviz\bin;C:\Program Files\MATLAB\R2022b\bin;C:\Users\manorz\AppData\Local\Microsoft\WindowsApps;C:\msys64\mingw64\bin;;C:\Users\manorz\AppData\Local\Programs\Microsoft VS Code\bin
+360 [23648] INFO perfrun.launcher <> - set environment variable: COR_ENABLE_PROFILING = 1
+360 [23648] INFO perfrun.launcher <> - set environment variable: COR_PROFILER = {AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+360 [23648] INFO perfrun.launcher <> - set environment variable: COMPLUS_ProfAPI_ProfilerCompatibilitySetting = EnableV2Profiler
+360 [23648] INFO perfrun.launcher <> - set environment variable: CORECLR_ENABLE_PROFILING = 1
+360 [23648] INFO perfrun.launcher <> - set environment variable: CORECLR_PROFILER = {AA5E4821-E3B1-479c-B7FF-5AD047D22CED}
+361 [23648] INFO perfrun.launcher <> - set environment variable: CORECLR_PROFILER_PATH = C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64/amplxe_samplingmrte_clrprof_1.0.dll
+361 [23648] INFO perfrun.launcher <> - set environment variable: INTEL_MRTE_PROFILER_MODE = mixed
+361 [23648] INFO perfrun.launcher <> - RpcServer: run RPC server to handle requests
+429 [23648] INFO perfrun.sdk <> - IProcessUtil: the given executable 'C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\bin\prime_parallel_static4_schedule_04t.exe' is valid.
+429 [23648] INFO perfrun.launcher <> - Launcher: command line to start before modification = C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\bin\prime_parallel_static4_schedule_04t.exe
+433 [23648] INFO perfrun.launcher <> - Launcher: command line to start after modification = C:\Program Files (x86)\Intel\oneAPI\vtune\2022.4.1\bin64\pin.exe -error_file C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0\pinerr.tpsslog -detach_reattach -probe -follow_execv -p32 C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\pin.exe -p64 C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\pin.exe -t64 C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin64\tpsstool.dll -t C:\Program Files (x86)\Intel\oneAPI\vtune\latest\bin32\tpsstool.dll -server_name tpss_ipc.15400 -prd_dir C:\Program Files (x86)\Intel\oneAPI\vtune\2022.4.1 -- C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\bin\prime_parallel_static4_schedule_04t.exe
+433 [23648] INFO perfrun.launcher <> - ProcessCreator object was created
+447 [23648] INFO perfrun.launcher <> - Launcher: the process was started in suspend mode
+468 [9504] INFO perfrun.itt <> - start itt controller for pid #1772
+514 [9504] INFO perfrun.tpss <> - start tpss controller for pid #1772
+568 [23648] INFO perfrun.launcher <> - Launcher: all plugins were started
+568 [23648] INFO perfrun.launcher <> - DirectoryMonitor object was created
+569 [23648] INFO perfrun.launcher <> - DirectoryMonitor: a callback was added
+569 [23648] INFO perfrun.launcher <> - DirectoryMonitor was started with pingTime = 1000
+569 [23648] INFO perfrun.launcher <> - DeadlineTimer is going to be constructed
+569 [23648] INFO perfrun.launcher <> - DeadlineTimer: a callback was added
+585 [23648] INFO perfrun.launcher <> - Launcher: resume the profiled application and  wait its termination or stop command
+43501 [23648] INFO perfrun.launcher <> - Launcher: the profiled application was terminated  with exit code = 0
+43525 [9504] INFO perfrun.itt <> - detach itt controller
+43525 [9504] INFO perfrun.itt <> - detach itt controller done
+43526 [9504] INFO perfrun.tpss <> - stop tpss controller
+43527 [9504] INFO perfrun.sdk <> - De-allocating TMU: C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0\systemcollector-15400-NV-6CV77D3.sc
+43552 [9504] INFO perfrun.system <> - closed the system trace file: C:\Users\manorz\OneDrive - NVIDIA Corporation\Desktop\Shared-Memory Parallelism CPUs GPUs and in-between 236606\cs236606\HW1\HW1\problem5\VTune\r003tr\data.0\systemcollector-15400-NV-6CV77D3.sc
+43552 [23648] INFO perfrun.launcher <> - Launcher: all plugins were stopped.
+43552 [23648] INFO perfrun.launcher <> - DeadlineTimer is going to be destroyed
+43553 [23648] INFO perfrun.launcher <> - DeadlineTimer was destroyed
+43553 [23648] INFO perfrun.launcher <> - DirectoryMonitor object was destroyed
+43553 [23648] WARN perfrun.launcher <> - Stop command is ignored because it is received when collection is already stopped, at file: C:\BB\ANphep2w6r\b\tmpqbc4_m\vcs\perfrun1\launcher\src\command_handler.cpp:226
+43555 [23648] INFO perfrun.launcher <> - Application exit code: 0
+43555 [23648] INFO perfrun.launcher <> - Exit code: 0
