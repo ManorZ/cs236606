@@ -1,0 +1,78 @@
+
+########################################################################
+#      Date:           Mon 26 Dec 2022 02:49:36 AM PST
+#    Job ID:           2104693.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel atomic
+########## Compiling your parallel atomic code
+########## Executing your parallel atomic -O2 code
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 455.256753 seconds, with 1 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 227.671164 seconds, with 2 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 113.863765 seconds, with 4 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 56.989678 seconds, with 8 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 30.711545 seconds, with 16 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 20.610472 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel atomic -O2
+########## Executing your parallel atomic -O0 code
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 779.611151 seconds, with 1 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 389.801301 seconds, with 2 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 194.940553 seconds, with 4 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 97.544291 seconds, with 8 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 59.173982 seconds, with 16 threads
+
+Area of Mandlebrot set =   5.62500000 +/-   0.00112500
+Parallel-Atomic implementation - time: 41.925236 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel atomic -O0
+########## Executing your parallel atomic v2 -O0 code
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Atomic implementation - time: 210.449262 seconds, with 1 threads
+
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Atomic implementation - time: 179.479128 seconds, with 2 threads
+
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Atomic implementation - time: 95.803659 seconds, with 4 threads
+
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Atomic implementation - time: 58.877993 seconds, with 8 threads
+
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Atomic implementation - time: 32.591445 seconds, with 16 threads
+
+Area of Mandlebrot set =   1.50763455 +/-   0.00030153
+Parallel-Atomic implementation - time: 24.955908 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+
+########################################################################
+# End of output for job 2104693.v-qsvr-1.aidevcloud
+# Date: Mon 26 Dec 2022 03:40:54 AM PST
+########################################################################
+

@@ -53,7 +53,23 @@ int main() {
             for (j = 0; j < NPOINTS; j++) {
                 c.r = -2.0 + 2.5 * (double)(i) / (double)(NPOINTS) + eps;
                 c.i = 1.125 * (double)(j) / (double)(NPOINTS) + eps;
-                testpoint();                
+                // testpoint();
+                
+                struct d_complex z;
+                int iter;
+                double temp;
+
+                z = c;
+                for (iter = 0; iter < MAXITER; iter++) {
+                    temp = (z.r * z.r) - (z.i * z.i) + c.r;
+                    z.i = z.r * z.i * 2 + c.i;
+                    z.r = temp;
+                    if ((z.r * z.r + z.i * z.i) > 4.0) {
+                        #pragma omp atomic
+                        numoutside++;
+                        break;
+                    }
+                }
             }
         }
        

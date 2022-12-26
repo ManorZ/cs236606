@@ -1,0 +1,37 @@
+
+########################################################################
+#      Date:           Mon 26 Dec 2022 03:47:14 AM PST
+#    Job ID:           2105136.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+## u177183 is running HW1 Problem 1 - Calculate Mandelbrot area - parallel atomic
+########## Compiling your parallel atomic code
+########## Executing your parallel atomic v1 -O2 code
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Atomic implementation - time: 121.665865 seconds, with 1 threads
+
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Atomic implementation - time: 103.842099 seconds, with 2 threads
+
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Atomic implementation - time: 55.452520 seconds, with 4 threads
+
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Atomic implementation - time: 34.115621 seconds, with 8 threads
+
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Atomic implementation - time: 18.905680 seconds, with 16 threads
+
+Area of Mandlebrot set =   1.50763950 +/-   0.00030153
+Parallel-Atomic implementation - time: 13.856563 seconds, with 24 threads
+
+(Correct answer should be around 1.506)
+########## Done parallel atomic v1 -O2
+
+########################################################################
+# End of output for job 2105136.v-qsvr-1.aidevcloud
+# Date: Mon 26 Dec 2022 03:53:09 AM PST
+########################################################################
+
