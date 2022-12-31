@@ -48,7 +48,7 @@ int main() {
         // Loop over grid of points in the complex plane which contains 
         // the Mandelbrot set, test each point to see whether it is 
         // inside or outside the set
-        #pragma omp parallel for collapse(2) private(i,j)
+        #pragma omp parallel for collapse(2) private(i,j,c)
         for (i = 0; i < NPOINTS; i++) {
             for (j = 0; j < NPOINTS; j++) {
                 c.r = -2.0 + 2.5 * (double)(i) / (double)(NPOINTS) + eps;
