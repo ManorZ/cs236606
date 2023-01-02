@@ -1,0 +1,27 @@
+
+########################################################################
+#      Date:           Wed 23 Nov 2022 08:08:38 PM PST
+#    Job ID:           2053933.v-qsvr-1.aidevcloud
+#      User:           u166450
+# Resources:           cput=35:00:00,neednodes=1:batch:ppn=2,nodes=1:batch:ppn=2,walltime=06:00:00
+########################################################################
+
+ 12 threads
+ Sequential  histogram for 1000 buckets of 2000000000 values
+ ave = 2000000.000000, std_dev = 189736656.000000
+ in 10.027740 seconds
+ par with critical  histogram for 1000 buckets of 2000000000 values
+ ave = 2000000.000000, std_dev = 189736656.000000
+ in 762.110413 seconds
+ par with locks  histogram for 1000 buckets of 2000000000 values
+ ave = 2000000.000000, std_dev = 189736656.000000
+ in 110.844162 seconds
+ par with reduction  histogram for 1000 buckets of 2000000000 values
+ ave = 2000000.000000, std_dev = 189736656.000000
+ in 1.376729 seconds
+
+########################################################################
+# End of output for job 2053933.v-qsvr-1.aidevcloud
+# Date: Wed 23 Nov 2022 08:24:03 PM PST
+########################################################################
+

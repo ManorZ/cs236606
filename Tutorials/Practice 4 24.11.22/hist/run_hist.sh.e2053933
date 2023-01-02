@@ -1,0 +1,9 @@
+hist_sol.c: In function ‘main’:
+hist_sol.c:73:25: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+   73 |    double* x = (double*)malloc(num_trials*sizeof(double)); //used to assign counters in the historgram
+      |                         ^~~~~~
+hist_sol.c:73:25: warning: incompatible implicit declaration of built-in function ‘malloc’
+hist_sol.c:30:1: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+   29 | #include "random.h"
+  +++ |+#include <stdlib.h>
+   30 | 
