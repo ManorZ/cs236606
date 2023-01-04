@@ -1,0 +1,29 @@
+
+########################################################################
+#      Date:           Tue 03 Jan 2023 10:47:07 AM PST
+#    Job ID:           2113296.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:gold6128:ppn=2,nodes=1:gold6128:ppn=2,walltime=06:00:00
+########################################################################
+
+icx -O0 -fopenmp -c shwater2d_parallel.c
+icx -O0 -fopenmp vtk_export.o shwater2d_parallel.o -o bin/shwater2d_parallel -lm	
+ Running 1 threads ... Order 1002,1002 Solver took 32.854230 seconds ...Validating ...Works!
+ Running 2 threads ... Order 1002,1002 Solver took 16.732970 seconds ...Validating ...Works!
+ Running 4 threads ... Order 1002,1002 Solver took 8.518195 seconds ...Validating ...Works!
+ Running 6 threads ... Order 1002,1002 Solver took 5.750875 seconds ...Validating ...Works!
+ Running 8 threads ... Order 1002,1002 Solver took 4.415305 seconds ...Validating ...Works!
+ Running 10 threads ... Order 1002,1002 Solver took 3.556470 seconds ...Validating ...Works!
+ Running 12 threads ... Order 1002,1002 Solver took 3.162560 seconds ...Validating ...Works!
+ Running 14 threads ... Order 1002,1002 Solver took 3.888517 seconds ...Validating ...Works!
+ Running 16 threads ... Order 1002,1002 Solver took 3.449847 seconds ...Validating ...Works!
+ Running 18 threads ... Order 1002,1002 Solver took 3.096384 seconds ...Validating ...Works!
+ Running 20 threads ... Order 1002,1002 Solver took 2.768238 seconds ...Validating ...Works!
+ Running 22 threads ... Order 1002,1002 Solver took 2.549615 seconds ...Validating ...Works!
+ Running 24 threads ... Order 1002,1002 Solver took 3.348055 seconds ...Validating ...Works!
+
+########################################################################
+# End of output for job 2113296.v-qsvr-1.aidevcloud
+# Date: Tue 03 Jan 2023 10:48:49 AM PST
+########################################################################
+

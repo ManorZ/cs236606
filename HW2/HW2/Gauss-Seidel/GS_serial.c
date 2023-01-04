@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <math.h>
 
+void printMatrix(double **a,int n);//helper to print matrix
+
 void gauss_seidel(int tsteps, int size, double **p) {
    for (int t = 0; t < tsteps; ++t) {
       for (int i = 1; i < size-1; ++i) {
@@ -22,7 +24,9 @@ int main(){
     
   double **p;
   int size = 6002;
+//   int size = 52;
   int tsteps = 100;
+//   int tsteps = 3;
   int i,j;
   double start;
   p=(double **)malloc(sizeof(double *)*size);  
@@ -55,8 +59,9 @@ int main(){
        printf("correct answer\n");
     else
        printf("ERROR = wrong answer\n");
-   
     
+//    printMatrix(p, size);
+      
    //free memory
    for(i=0;i<size;i++){
      free(p[i]);
@@ -64,3 +69,16 @@ int main(){
    free(p);
    return 0;
 }
+
+void printMatrix(double **mat,int n) {
+    int i,j;
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            printf("%.2f ",mat[i][j]);
+        }
+        printf("\n");
+    }
+    printf("------------------------------------------------\n");
+}
+
+

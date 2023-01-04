@@ -30,6 +30,23 @@ void validate(double *Q, int m, int n) {
     }
 }
 
+void print(double *Q, int m, int n) {
+    int i, j, k;
+    printf("Q=\n");
+    for (k = 0; k < cell_size;  k++) {
+        printf("[\n");
+        for (i = 0; i < n; i++) {
+            printf("\t[");
+            for (j = 0; j < m; j++) {
+                if (Q(k, j, i) < 0) printf("%.3f,", Q(k, j, i));
+                else printf("%.4f,", Q(k, j, i));
+            }
+            printf("]\n");
+        }
+        printf("]\n\n");
+    }
+}
+
 /* Flux function in the x-direction */
 void fx(double *Q, double **fq, int m, int n, int j) {  
   int i;
@@ -168,7 +185,7 @@ int main(int argc, char **argv) {
   Q = (double *) malloc(m * n * cell_size *  sizeof(double));
 
   x = (double *) malloc(m * sizeof(double));
-  y = (double *) malloc(n * sizeof(double));	
+  y = (double *) malloc(n * sizeof(double));
 
   /* Allocate memory for fluxes */
   ffx = (double **) malloc(cell_size * sizeof(double *));
@@ -215,6 +232,8 @@ int main(int argc, char **argv) {
   etime = omp_get_wtime();
 
   validate(Q, m,  n);
+    
+//   print(Q,m,n);
 
   printf("Serial Solver took %g seconds\n", etime - stime);
 

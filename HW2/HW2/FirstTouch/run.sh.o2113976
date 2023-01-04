@@ -1,0 +1,66 @@
+
+########################################################################
+#      Date:           Wed 04 Jan 2023 12:14:55 AM PST
+#    Job ID:           2113976.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:gold6128:ppn=2,nodes=1:gold6128:ppn=2,walltime=06:00:00
+########################################################################
+
+Number of threads 1 Number of threads 1 First touch init Execution time: 6.920628 seconds OpenMP threads binding policy is 3 
+Number of threads 1 Master thread init Execution time: 6.930531 seconds OpenMP threads binding policy is 3 
+Number of threads 2 Number of threads 2 First touch init Execution time: 5.220570 seconds OpenMP threads binding policy is 3 
+Number of threads 2 Master thread init Execution time: 3.444151 seconds OpenMP threads binding policy is 3 
+Number of threads 4 Number of threads 4 First touch init Execution time: 2.264033 seconds OpenMP threads binding policy is 3 
+Number of threads 4 Master thread init Execution time: 1.919107 seconds OpenMP threads binding policy is 3 
+Number of threads 6 Number of threads 6 First touch init Execution time: 1.917035 seconds OpenMP threads binding policy is 3 
+Number of threads 6 Master thread init Execution time: 1.727893 seconds OpenMP threads binding policy is 3 
+Number of threads 8 Number of threads 8 First touch init Execution time: 1.447589 seconds OpenMP threads binding policy is 3 
+Number of threads 8 Master thread init Execution time: 2.052601 seconds OpenMP threads binding policy is 3 
+Number of threads 10 Number of threads 10 First touch init Execution time: 1.154887 seconds OpenMP threads binding policy is 3 
+Number of threads 10 Master thread init Execution time: 2.225294 seconds OpenMP threads binding policy is 3 
+Number of threads 12 Number of threads 12 First touch init Execution time: 0.983194 seconds OpenMP threads binding policy is 3 
+Number of threads 12 Master thread init Execution time: 2.382486 seconds OpenMP threads binding policy is 3 
+Number of threads 14 Number of threads 14 First touch init Execution time: 1.302303 seconds OpenMP threads binding policy is 3 
+Number of threads 14 Master thread init Execution time: 2.514802 seconds OpenMP threads binding policy is 3 
+Number of threads 16 Number of threads 16 First touch init Execution time: 1.145025 seconds OpenMP threads binding policy is 3 
+Number of threads 16 Master thread init Execution time: 2.397622 seconds OpenMP threads binding policy is 3 
+Number of threads 18 Number of threads 18 First touch init Execution time: 1.064861 seconds OpenMP threads binding policy is 3 
+Number of threads 18 Master thread init Execution time: 2.396417 seconds OpenMP threads binding policy is 3 
+Number of threads 20 Number of threads 20 First touch init Execution time: 1.124531 seconds OpenMP threads binding policy is 3 
+Number of threads 20 Master thread init Execution time: 2.251343 seconds OpenMP threads binding policy is 3 
+Number of threads 22 Number of threads 22 First touch init Execution time: 0.999982 seconds OpenMP threads binding policy is 3 
+Number of threads 22 Master thread init Execution time: 2.322453 seconds OpenMP threads binding policy is 3 
+Number of threads 24 Number of threads 24 First touch init Execution time: 0.918527 seconds OpenMP threads binding policy is 3 
+Number of threads 24 Master thread init Execution time: 2.415512 seconds OpenMP threads binding policy is 3 
+Number of threads 1 Number of threads 1 First touch init Execution time: 6.924983 seconds OpenMP threads binding policy is 4 
+Number of threads 1 Master thread init Execution time: 6.937758 seconds OpenMP threads binding policy is 4 
+Number of threads 2 Number of threads 2 First touch init Execution time: 7.987443 seconds OpenMP threads binding policy is 4 
+Number of threads 2 Master thread init Execution time: 3.678349 seconds OpenMP threads binding policy is 4 
+Number of threads 4 Number of threads 4 First touch init Execution time: 2.241788 seconds OpenMP threads binding policy is 4 
+Number of threads 4 Master thread init Execution time: 2.431789 seconds OpenMP threads binding policy is 4 
+Number of threads 6 Number of threads 6 First touch init Execution time: 1.498533 seconds OpenMP threads binding policy is 4 
+Number of threads 6 Master thread init Execution time: 2.337935 seconds OpenMP threads binding policy is 4 
+Number of threads 8 Number of threads 8 First touch init Execution time: 1.185010 seconds OpenMP threads binding policy is 4 
+Number of threads 8 Master thread init Execution time: 2.409866 seconds OpenMP threads binding policy is 4 
+Number of threads 10 Number of threads 10 First touch init Execution time: 1.017496 seconds OpenMP threads binding policy is 4 
+Number of threads 10 Master thread init Execution time: 2.379955 seconds OpenMP threads binding policy is 4 
+Number of threads 12 Number of threads 12 First touch init Execution time: 0.980252 seconds OpenMP threads binding policy is 4 
+Number of threads 12 Master thread init Execution time: 2.376433 seconds OpenMP threads binding policy is 4 
+Number of threads 14 Number of threads 14 First touch init Execution time: 1.300324 seconds OpenMP threads binding policy is 4 
+Number of threads 14 Master thread init Execution time: 2.513479 seconds OpenMP threads binding policy is 4 
+Number of threads 16 Number of threads 16 First touch init Execution time: 1.146554 seconds OpenMP threads binding policy is 4 
+Number of threads 16 Master thread init Execution time: 2.391923 seconds OpenMP threads binding policy is 4 
+Number of threads 18 Number of threads 18 First touch init Execution time: 1.061790 seconds OpenMP threads binding policy is 4 
+Number of threads 18 Master thread init Execution time: 2.395064 seconds OpenMP threads binding policy is 4 
+Number of threads 20 Number of threads 20 First touch init Execution time: 1.134956 seconds OpenMP threads binding policy is 4 
+Number of threads 20 Master thread init Execution time: 2.229030 seconds OpenMP threads binding policy is 4 
+Number of threads 22 Number of threads 22 First touch init Execution time: 0.997975 seconds OpenMP threads binding policy is 4 
+Number of threads 22 Master thread init Execution time: 2.325186 seconds OpenMP threads binding policy is 4 
+Number of threads 24 Number of threads 24 First touch init Execution time: 0.924546 seconds OpenMP threads binding policy is 4 
+Number of threads 24 Master thread init Execution time: 2.416347 seconds OpenMP threads binding policy is 4 
+
+########################################################################
+# End of output for job 2113976.v-qsvr-1.aidevcloud
+# Date: Wed 04 Jan 2023 12:33:19 AM PST
+########################################################################
+

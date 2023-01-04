@@ -19,12 +19,16 @@
 #define BVAL 5.0
 #define TOL  0.001
 
+#define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
+
 int main(int argc, char **argv)
 {
     int Ndim, Pdim, Mdim;   /* A[N][P], B[P][M], C[N][M] */
-    int i,j,k;
-    double *A, *B, *C, cval, tmp, err, errsq;
+    int i,j,k,t;
+    double *A, *B, *C, cval, err, errsq;
     double start_time, run_time;
+    
+    int omp_threads[13] = {1,2,4,6,8,10,12,14,16,18,20,22,24};
 
     Ndim = ORDER;
     Pdim = ORDER*100;
@@ -33,54 +37,64 @@ int main(int argc, char **argv)
     A = (double *)malloc(Ndim*Pdim*sizeof(double));
     B = (double *)malloc(Pdim*Mdim*sizeof(double));
     C = (double *)malloc(Ndim*Mdim*sizeof(double));
+    
+    for ( int x=0; x<NELEMS(omp_threads); x++ ) {
+        int num_threads = omp_threads[x];
+        omp_set_num_threads(num_threads);
+        
+        printf(" Running %d threads ...", num_threads);
+    
+        /* Initialize matrices */
 
-    /* Initialize matrices */
+        for (i=0; i<Ndim; i++)
+            for (j=0; j<Pdim; j++)
+                *(A+(i*Ndim+j)) = AVAL;
 
-    for (i=0; i<Ndim; i++)
-        for (j=0; j<Pdim; j++)
-            *(A+(i*Ndim+j)) = AVAL;
+        for (i=0; i<Pdim; i++)
+            for (j=0; j<Mdim; j++)
+                *(B+(i*Pdim+j)) = BVAL;
 
-    for (i=0; i<Pdim; i++)
-        for (j=0; j<Mdim; j++)
-            *(B+(i*Pdim+j)) = BVAL;
-
-    for (i=0; i<Ndim; i++)
-        for (j=0; j<Mdim; j++)
-            *(C+(i*Ndim+j)) = 0.0;
-
-    /* Do the matrix product */
-
-    start_time = omp_get_wtime(); 
-    for (i=0; i<Ndim; i++){
-        for (j=0; j<Mdim; j++){
-            tmp = 0.0;
-            for(k=0;k<Pdim;k++){
-                /* C(i,j) = sum(over k) A(i,k) * B(k,j) */
-                tmp += *(A+(i*Ndim+k)) *  *(B+(k*Pdim+j));
+        for (i=0; i<Ndim; i++)
+            for (j=0; j<Mdim; j++)
+                *(C+(i*Ndim+j)) = 0.0;
+        
+        /* Do the matrix product */
+        
+        start_time = omp_get_wtime();
+        
+//         #pragma omp parallel for default(none) private(i,j,k,t) shared(A,B,C,Ndim,Mdim,Pdim)
+        #pragma omp parallel for collapse(2) default(none) private(i,j,k,t) shared(A,B,C,Ndim,Mdim,Pdim)
+        for (i=0; i<Ndim; i++){
+            for (j=0; j<Mdim; j++){
+                t = 0.0;
+                for(k=0;k<Pdim;k++){
+                    /* C(i,j) = sum(over k) A(i,k) * B(k,j) */
+                    t += *(A+(i*Ndim+k)) *  *(B+(k*Pdim+j));
+                }
+                *(C+(i*Ndim+j)) = t;
             }
-            *(C+(i*Ndim+j)) = tmp;
         }
-    }
-   
-    run_time = omp_get_wtime() - start_time;
- 
-    printf(" Order %d multiplication in %f seconds \n", ORDER, run_time);
-           
-    /* Check the answer */
-           
-    cval = Pdim * AVAL * BVAL;
-    errsq = 0.0;
-    for (i=0; i<Ndim; i++){
-        for (j=0; j<Mdim; j++){
-            err = *(C+i*Ndim+j) - cval;
-            errsq += err * err;
+
+        run_time = omp_get_wtime() - start_time;
+
+        printf(" Order %d multiplication in %f seconds ...", ORDER, run_time);
+
+        /* Check the answer */
+
+        cval = Pdim * AVAL * BVAL;
+        errsq = 0.0;
+        for (i=0; i<Ndim; i++){
+            for (j=0; j<Mdim; j++){
+                err = *(C+i*Ndim+j) - cval;
+                errsq += err * err;
+            }
         }
+
+        if (errsq > TOL) 
+            printf(" Errors in multiplication: %f ...",errsq);
+        else
+            printf(" Hey, it worked ...");
+
+        printf(" all done\n");
     }
-
-    if (errsq > TOL) 
-        printf("\n Errors in multiplication: %f",errsq);
-    else
-        printf("\n Hey, it worked");
-
-    printf("\n all done \n");
 }

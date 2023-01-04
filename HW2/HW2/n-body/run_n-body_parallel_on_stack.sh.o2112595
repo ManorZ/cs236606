@@ -1,0 +1,27 @@
+
+########################################################################
+#      Date:           Mon 02 Jan 2023 09:28:43 AM PST
+#    Job ID:           2112595.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:gold6128:ppn=2,nodes=1:gold6128:ppn=2,walltime=06:00:00
+########################################################################
+
+ Running 1 threads ... 10 iterations X 20000 bodies operation took 56.562434 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 2 threads ... 10 iterations X 20000 bodies operation took 28.446723 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 4 threads ... 10 iterations X 20000 bodies operation took 14.235707 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 6 threads ... 10 iterations X 20000 bodies operation took 9.536500 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 8 threads ... 10 iterations X 20000 bodies operation took 7.299819 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 10 threads ... 10 iterations X 20000 bodies operation took 5.714892 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 12 threads ... 10 iterations X 20000 bodies operation took 4.817734 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 14 threads ... 10 iterations X 20000 bodies operation took 6.628630 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 16 threads ... 10 iterations X 20000 bodies operation took 5.780739 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 18 threads ... 10 iterations X 20000 bodies operation took 5.139168 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 20 threads ... 10 iterations X 20000 bodies operation took 4.619557 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 22 threads ... 10 iterations X 20000 bodies operation took 4.198591 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+ Running 24 threads ... 10 iterations X 20000 bodies operation took 3.865624 seconds ... Yippee Ki-Yay M*th*rf*ck*r It worked!
+
+########################################################################
+# End of output for job 2112595.v-qsvr-1.aidevcloud
+# Date: Mon 02 Jan 2023 09:32:17 AM PST
+########################################################################
+
