@@ -67,6 +67,7 @@ int main(int argc, char **argv)
         for (i=0; i<Ndim; i++){
             for (j=0; j<Mdim; j++){
                 t = 0.0;
+//                 # pragma omp parallel for simd reduction(+:t)
                 for(k=0;k<Pdim;k++){
                     /* C(i,j) = sum(over k) A(i,k) * B(k,j) */
                     t += *(A+(i*Ndim+k)) *  *(B+(k*Pdim+j));

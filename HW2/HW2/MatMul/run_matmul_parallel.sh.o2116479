@@ -1,0 +1,27 @@
+
+########################################################################
+#      Date:           Thu 05 Jan 2023 10:39:15 AM PST
+#    Job ID:           2116479.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:gold6128:ppn=2,nodes=1:gold6128:ppn=2,walltime=06:00:00
+########################################################################
+
+ Running 1 threads ... Order 50 multiplication in 13.338866 seconds ... Hey, it worked ... all done
+ Running 2 threads ... Order 50 multiplication in 7.415360 seconds ... Hey, it worked ... all done
+ Running 4 threads ... Order 50 multiplication in 3.607857 seconds ... Hey, it worked ... all done
+ Running 6 threads ... Order 50 multiplication in 2.495045 seconds ... Hey, it worked ... all done
+ Running 8 threads ... Order 50 multiplication in 1.869210 seconds ... Hey, it worked ... all done
+ Running 10 threads ... Order 50 multiplication in 1.423579 seconds ... Hey, it worked ... all done
+ Running 12 threads ... Order 50 multiplication in 1.362094 seconds ... Hey, it worked ... all done
+ Running 14 threads ... Order 50 multiplication in 1.487657 seconds ... Hey, it worked ... all done
+ Running 16 threads ... Order 50 multiplication in 1.521930 seconds ... Hey, it worked ... all done
+ Running 18 threads ... Order 50 multiplication in 1.322232 seconds ... Hey, it worked ... all done
+ Running 20 threads ... Order 50 multiplication in 1.323456 seconds ... Hey, it worked ... all done
+ Running 22 threads ... Order 50 multiplication in 1.346708 seconds ... Hey, it worked ... all done
+ Running 24 threads ... Order 50 multiplication in 1.413144 seconds ... Hey, it worked ... all done
+
+########################################################################
+# End of output for job 2116479.v-qsvr-1.aidevcloud
+# Date: Thu 05 Jan 2023 10:40:03 AM PST
+########################################################################
+

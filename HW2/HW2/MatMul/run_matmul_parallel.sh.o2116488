@@ -1,0 +1,40 @@
+
+########################################################################
+#      Date:           Thu 05 Jan 2023 10:46:15 AM PST
+#    Job ID:           2116488.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:gold6128:ppn=2,nodes=1:gold6128:ppn=2,walltime=06:00:00
+########################################################################
+#pragma omp parallel for collapse(2) default(none) private(i,j,k,t) shared(A,B,C,Ndim,Mdim,Pdim)
+for (i=0; i<Ndim; i++){
+    for (j=0; j<Mdim; j++){
+        t = 0.0;
+        # pragma omp parallel for simd reduction(+:t)
+        for(k=0;k<Pdim;k++){
+            /* C(i,j) = sum(over k) A(i,k) * B(k,j) */
+            t += *(A+(i*Ndim+k)) *  *(B+(k*Pdim+j));
+        }
+        *(C+(i*Ndim+j)) = t;
+    }
+}
+########################################################################
+
+ Running 1 threads ... Order 50 multiplication in 12.777260 seconds ... Hey, it worked ... all done
+ Running 2 threads ... Order 50 multiplication in 7.477774 seconds ... Hey, it worked ... all done
+ Running 4 threads ... Order 50 multiplication in 3.693368 seconds ... Hey, it worked ... all done
+ Running 6 threads ... Order 50 multiplication in 2.567487 seconds ... Hey, it worked ... all done
+ Running 8 threads ... Order 50 multiplication in 1.855859 seconds ... Hey, it worked ... all done
+ Running 10 threads ... Order 50 multiplication in 1.419425 seconds ... Hey, it worked ... all done
+ Running 12 threads ... Order 50 multiplication in 1.342192 seconds ... Hey, it worked ... all done
+ Running 14 threads ... Order 50 multiplication in 1.681835 seconds ... Hey, it worked ... all done
+ Running 16 threads ... Order 50 multiplication in 1.520370 seconds ... Hey, it worked ... all done
+ Running 18 threads ... Order 50 multiplication in 1.397122 seconds ... Hey, it worked ... all done
+ Running 20 threads ... Order 50 multiplication in 1.377614 seconds ... Hey, it worked ... all done
+ Running 22 threads ... Order 50 multiplication in 1.351615 seconds ... Hey, it worked ... all done
+ Running 24 threads ... Order 50 multiplication in 1.225828 seconds ... Hey, it worked ... all done
+
+########################################################################
+# End of output for job 2116488.v-qsvr-1.aidevcloud
+# Date: Thu 05 Jan 2023 10:47:03 AM PST
+########################################################################
+

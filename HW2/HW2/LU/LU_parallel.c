@@ -56,19 +56,19 @@ int main(int argc, char **argv) {
 
         /*Perform LU decomposition*/
      
-        for(k=0;k<n;k++) {
-            #pragma omp parallel for default(none) private(j) shared(k,n,a)
-            for(j=k+1;j<n;j++) {
-                a[k][j]=a[k][j]/a[k][k];//Scaling
-            }
-//             #pragma omp parallel for collapse(2) default(none) private(i,j) shared(k,n,a)
-            #pragma omp parallel for default(none) private(i,j) shared(k,n,a)
-            for(i=k+1;i<n;i++) { 
-                for(j=k+1;j<n;j++) {
-                    a[i][j]=a[i][j]-a[i][k]*a[k][j];
-                } 
-            }
-        }
+//         for(k=0;k<n;k++) {
+//             #pragma omp parallel for default(none) private(j) shared(k,n,a)
+//             for(j=k+1;j<n;j++) {
+//                 a[k][j]=a[k][j]/a[k][k];//Scaling
+//             }
+// //             #pragma omp parallel for collapse(2) default(none) private(i,j) shared(k,n,a)
+//             #pragma omp parallel for default(none) private(i,j) shared(k,n,a)
+//             for(i=k+1;i<n;i++) { 
+//                 for(j=k+1;j<n;j++) {
+//                     a[i][j]=a[i][j]-a[i][k]*a[k][j];
+//                 } 
+//             }
+//         }
 
 //         for(k=0;k<n;k++) {
 //             #pragma omp parallel for default(none) private(j,i) shared(k,n,a) nowait
@@ -80,6 +80,23 @@ int main(int argc, char **argv) {
 //                 } 
 //             }
 //         }
+        
+        #pragma omp parallel
+        {
+        for(k=0;k<n;k++) {
+            #pragma omp for simd default(none) private(j) shared(k,n,a) nowait
+            for(j=k+1;j<n;j++) {
+                a[k][j]=a[k][j]/a[k][k];//Scaling
+            }
+//             #pragma omp parallel for collapse(2) default(none) private(i,j) shared(k,n,a)
+            #pragma omp for default(none) private(i,j) shared(k,n,a)
+            for(i=k+1;i<n;i++) { 
+                for(j=k+1;j<n;j++) {
+                    a[i][j]=a[i][j]-a[i][k]*a[k][j];
+                } 
+            }
+        }
+        }
 
         
         /*end of LU decomposition*/
