@@ -27,7 +27,7 @@ void gauss_seidel(int tsteps, int size, int TS, double **p) {
                 //insert all the following work (on TSxTS cells) to a single task
                 // depend on         the row above (p[ii-1][jj:jj+TS-1]),     the col on the left (p[ii:ii+TS-1][jj-1]) and the corner cell upper-left (p[ii-1][jj-1])
                 // put dependence on the row below (p[ii+TS][jj:jj+TS-1]) and the col on the right (p[ii:ii+TS-1][jj+TS])
-                #pragma omp task depend(in:p[ii-1][jj:jj+TS-1],p[ii:ii+TS-1][jj-1]) depend(out:p[ii+TS][jj:jj+TS-1],p[ii:ii+TS-1][jj+TS])
+                #pragma omp task depend(in:p[ii-1][jj:jj+TS],p[ii:ii+TS][jj-1],p[ii-1][jj-1]) depend(out:p[ii+TS][jj:jj+TS],p[ii:ii+TS][jj+TS])
                 {
                     for (int i = ii; i < ii+TS; ++i)
                         for (int j = jj; j < jj+TS; ++j)
@@ -42,13 +42,14 @@ void gauss_seidel(int tsteps, int size, int TS, double **p) {
 int main(){ 
     
   double **p;
-  int size = 6002;
-//   int size = 52;
-  int tsteps = 100;
-//   int tsteps = 3;
+//   int size = 6002;
+  int size = 52;
+//   int tsteps = 100;
+  int tsteps = 3;
   int i,j;
   double start;
-  int TS = 500;
+//   int TS = 500;
+  int TS = 10;
   omp_set_num_threads(NTHREADS);
   p=(double **)malloc(sizeof(double *)*size);  
   
@@ -85,9 +86,9 @@ int main(){
     else
        printf("ERROR = wrong answer\n");
     
-//     printf("\n\n\n");
-//     printMatrix(p, size);
-//     printf("\n\n\n");
+    printf("\n\n\n");
+    printMatrix(p, size);
+    printf("\n\n\n");
     
     /* Running Serial as a referecne */
     
@@ -122,31 +123,23 @@ int main(){
     double diff_sum = fabs(sum-ser_sum);
     printf("diff_sum = %f \n", diff_sum); 
     
-//     printf("\n\n\n");
-//     printMatrix(ser_p, size);
-//     printf("\n\n\n");
+    printf("\n\n\n");
+    printMatrix(ser_p, size);
+    printf("\n\n\n");
     
-//     double **diff_p=(double **)malloc(sizeof(double *)*size);
-//     for(i=0;i<size;i++){
-//       diff_p[i]=(double *)malloc(sizeof(double)*size); 
-//     }
-//     for(i=0;i<size;i++){
-//       for(j=0;j<size;j++){
-//         diff_p[i][j]=fabs(p[i][j]-ser_p[i][j]);
-//       }
-//     }
+    double **diff_p=(double **)malloc(sizeof(double *)*size);
+    for(i=0;i<size;i++){
+      diff_p[i]=(double *)malloc(sizeof(double)*size); 
+    }
+    for(i=0;i<size;i++){
+      for(j=0;j<size;j++){
+        diff_p[i][j]=fabs(p[i][j]-ser_p[i][j]);
+      }
+    }
     
-//     double diff_sum=0;
-//     for(i=0;i<size;i++){
-//       for(j=0;j<size;j++){
-//         diff_sum += diff_p[i][j];
-//       }
-//     }
-//     printf("diff_sum = %f \n", diff_sum); 
-    
-//     printf("\n\n\n");
-//     printMatrix(diff_p, size);
-//     printf("\n\n\n");
+    printf("\n\n\n");
+    printMatrix(diff_p, size);
+    printf("\n\n\n");
     
    
    //free memory
@@ -155,10 +148,10 @@ int main(){
    }
    free(p);
    
-//    for(i=0;i<size;i++){
-//      free(ser_p[i]);
-//    }
-//    free(ser_p);
+   for(i=0;i<size;i++){
+     free(ser_p[i]);
+   }
+   free(ser_p);
     
    return 0;
 }

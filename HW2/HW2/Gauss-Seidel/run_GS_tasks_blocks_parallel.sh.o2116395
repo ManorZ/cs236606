@@ -1,0 +1,20 @@
+
+########################################################################
+#      Date:           Thu 05 Jan 2023 09:48:17 AM PST
+#    Job ID:           2116395.v-qsvr-1.aidevcloud
+#      User:           u177183
+# Resources:           cput=75:00:00,neednodes=1:gold6128:ppn=2,nodes=1:gold6128:ppn=2,walltime=06:00:00
+########################################################################
+
+Tasks Blocks Order 6002 Block Size 500 100 Steps Execution time: 2.281546 sec, with 12 threads 
+sum = 9824859248.141207 
+ERROR = wrong answer
+ser_sum = 9825298683.981915 
+serial: correct answer
+diff_sum = 439435.840708 
+
+########################################################################
+# End of output for job 2116395.v-qsvr-1.aidevcloud
+# Date: Thu 05 Jan 2023 09:48:48 AM PST
+########################################################################
+
