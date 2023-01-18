@@ -1,0 +1,106 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.8.0 Build 20221119_000000
+
+Compiler options: -O3 -xCORE-AVX512 -qopt-zmm-usage=high -o sq -qopt-report=5 -ipo -qopt-report-phase=ipo -diag-disable=10441
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: true
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: true
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: true
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: disabled
+  -inline-max-per-compile: disabled
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/6=16.7%] square_charge.c(58,1)
+  -> EXTERN: (65,18) ?1memcpy
+  -> EXTERN: (66,18) ?1memcpy
+  -> INLINE: (68,5) start_timer() (isz = 4) (sz = 7)
+    -> EXTERN: (36,5) gettimeofday(struct timeval *__restrict__, void *__restrict__)
+  -> INLINE: (70,24) twod(float, float, float, float, int, int, float, float) (isz = 43) (sz = 64)
+    -> twod.c:(29,23) trap(float, float, float, int, float, float) (isz = 61) (sz = 78)
+       [[ Callee not marked with inlining pragma  <1>]]
+    -> twod.c:(30,23) trap(float, float, float, int, float, float) (isz = 61) (sz = 78)
+       [[ Callee not marked with inlining pragma  <1>]]
+    -> twod.c:(34,27) trap(float, float, float, int, float, float) (isz = 61) (sz = 78)
+       [[ Callee not marked with inlining pragma  <1>]]
+  -> (72,16) stop_timer() (isz = 13) (sz = 18)
+     [[ Callee not marked with inlining pragma  <1>]]
+  -> EXTERN: (75,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (76,5) printf(const char *__restrict__, ...)
+
+===========================================================================
+
+Begin optimization report for: rabs(float, float, float, float)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (rabs(float, float, float, float)) rabs.c(19,1)
+
+===========================================================================
+
+Begin optimization report for: twod(float, float, float, float, int, int, float, float)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (twod(float, float, float, float, int, int, float, float)) twod.c(23,1)
+
+===========================================================================
+
+Begin optimization report for: start_timer()
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (start_timer()) square_charge.c(34,1)
+
+===========================================================================
+
+Begin optimization report for: trap(float, float, float, int, float, float)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (trap(float, float, float, int, float, float)) [5/6=83.3%] trap.c(18,1)
+  -> INLINE: (23,19) rabs(float, float, float, float) (isz = 8) (sz = 21)
+  -> INLINE: (23,41) rabs(float, float, float, float) (isz = 8) (sz = 21)
+  -> INLINE: (27,17) rabs(float, float, float, float) (isz = 8) (sz = 21)
+
+===========================================================================
+
+Begin optimization report for: stop_timer()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (stop_timer()) [6/6=100.0%] square_charge.c(43,1)
+  -> EXTERN: (45,5) gettimeofday(struct timeval *__restrict__, void *__restrict__)
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> The compiler's heuristics indicate that the function is not profitable to 
+    inline.  Override this decision by adding "inline 
+    __attribute__((always_inline))" to the declaration of the called function, 
+    or add "#pragma forceinline" before the call site.
+

@@ -1,0 +1,1629 @@
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 13 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 13 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 32, Column: 23 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: multiply.c, Line: 32, Column: 23 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+...
+--- !Passed
+Pass:            gvn
+Name:            LoadPRE
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          load eliminated by PRE
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 32, Column: 23 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            sext
+    DebugLoc:        { File: multiply.c, Line: 32, Column: 23 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     store
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 31 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-5'
+  - String:          ' and with tree size '
+  - TreeSize:        '12'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-5'
+  - String:          ' and with tree size '
+  - TreeSize:        '12'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-5'
+  - String:          ' and with tree size '
+  - TreeSize:        '12'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-5'
+  - String:          ' and with tree size '
+  - TreeSize:        '12'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 29 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: multiply.c, Line: 33, Column: 31 }
+Function:        matvec
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 32, Column: 9 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 32, Column: 9 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+...
+--- !Missed
+Pass:            licm
+Name:            LoadWithLoopInvariantAddressInvalidated
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          failed to move load with loop-invariant address because the loop may invalidate its value
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shl
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - NumVRCopies:     '2'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.111111e+00'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: multiply.c, Line: 32, Column: 9 }
+Function:        matvec
+Args:
+  - NumFoldedReloads: '4'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '2.527901e+02'
+  - String:          ' total folded reloads cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: multiply.c, Line: 32, Column: 9 }
+Function:        matvec
+Args:
+  - NumReloads:      '1'
+  - String:          ' reloads '
+  - TotalReloadsCost: '6.951852e+01'
+  - String:          ' total reloads cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - NumSpills:       '12'
+  - String:          ' spills '
+  - TotalSpillsCost: '2.592593e+01'
+  - String:          ' total spills cost '
+  - NumReloads:      '19'
+  - String:          ' reloads '
+  - TotalReloadsCost: '1.099876e+02'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '7'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '2.612469e+02'
+  - String:          ' total folded reloads cost '
+  - NumVRCopies:     '3'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '7.271605e+00'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '6.320988e+00'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: multiply.c, Line: 17, Column: 1 }
+Function:        matvec
+Args:
+  - NumSpills:       '26'
+  - String:          ' spills '
+  - TotalSpillsCost: '2.839506e+01'
+  - String:          ' total spills cost '
+  - NumFoldedSpills: '1'
+  - String:          ' folded spills '
+  - TotalFoldedSpillsCost: '3.950617e-01'
+  - String:          ' total folded spills cost '
+  - NumReloads:      '28'
+  - String:          ' reloads '
+  - TotalReloadsCost: '1.117654e+02'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '9'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '2.620370e+02'
+  - String:          ' total folded reloads cost '
+  - NumVRCopies:     '15'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '2.128395e+01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: multiply.c, Line: 19, Column: 0 }
+Function:        matvec
+Args:
+  - NumStackBytes:   '280'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 31, Column: 19 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 32, Column: 23 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '36'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 32, Column: 9 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 32, Column: 9 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 36 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 31 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 31 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 31, Column: 5 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 31 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 31, Column: 19 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 36, Column: 1 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '28'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '16'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 38 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '34'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 31 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '35'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 18 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '49'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: multiply.c, Line: 33, Column: 21 }
+Function:        matvec
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '34'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: multiply.c, Line: 19, Column: 0 }
+Function:        matvec
+Args:
+  - NumInstructions: '348'
+  - String:          ' instructions in function'
+...

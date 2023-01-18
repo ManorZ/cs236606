@@ -1,0 +1,131 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.8.0 Build 20221119_000000
+
+Compiler options: -O2 -xCORE-AVX512 -qopt-zmm-usage=high -o matvector -qopt-report=5 -diag-disable=10441
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: matvec(unsigned int, unsigned int, double (*)[*], double *, double *, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (matvec(unsigned int, unsigned int, double (*)[*], double *, double *, double *)) [1/1=100.0%] multiply.c(19,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at multiply.c(31,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at multiply.c(33,9)
+   <Peeled loop for vectorization>
+      remark #15389: vectorization support: reference a[i][j] has unaligned access   [ multiply.c(34,21) ]
+      remark #15389: vectorization support: reference x[j] has unaligned access   [ multiply.c(34,31) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.783
+      remark #15355: vectorization support: *(b+i*8) is double type reduction   [ multiply.c(34,13) ]
+      remark #15301: PEEL LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 10 
+      remark #15477: vector cost: 1.370 
+      remark #15478: estimated potential speedup: 6.260 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at multiply.c(33,9)
+      remark #25085: Preprocess Loopnests: Moving Out Load and Store    [ multiply.c(34,13) ]
+      remark #15389: vectorization support: reference a[i][j] has unaligned access   [ multiply.c(34,21) ]
+      remark #15388: vectorization support: reference x[j] has aligned access   [ multiply.c(34,31) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.886
+      remark #15355: vectorization support: *(b+i*8) is double type reduction   [ multiply.c(34,13) ]
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 10 
+      remark #15477: vector cost: 1.370 
+      remark #15478: estimated potential speedup: 6.260 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at multiply.c(33,9)
+   <Remainder loop for vectorization>
+      remark #15389: vectorization support: reference a[i][j] has unaligned access   [ multiply.c(34,21) ]
+      remark #15389: vectorization support: reference x[j] has unaligned access   [ multiply.c(34,31) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 8
+      remark #15309: vectorization support: normalized vectorization overhead 0.783
+      remark #15355: vectorization support: *(b+i*8) is double type reduction   [ multiply.c(34,13) ]
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 10 
+      remark #15477: vector cost: 1.370 
+      remark #15478: estimated potential speedup: 6.260 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+multiply.c(19,1):remark #34051: REGISTER ALLOCATION : [matvec] multiply.c:19
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   63[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm31 k0-k7]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   28[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm12 k1]
+        
+    Routine temporaries
+        Total         :      87
+            Global    :      45
+            Local     :      42
+        Regenerable   :       4
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :      11 [2.08e+00 ~ 2.1%]
+            Writes    :       8 [1.13e+00 ~ 1.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

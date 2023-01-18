@@ -1,0 +1,1749 @@
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 34, Column: 5 }
+Function:        start_timer
+Args:
+  - Callee:          gettimeofday
+  - String:          ' will not be inlined into '
+  - Caller:          start_timer
+    DebugLoc:        { File: driver.c, Line: 32, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 34, Column: 5 }
+Function:        start_timer
+Args:
+  - Callee:          gettimeofday
+  - String:          ' will not be inlined into '
+  - Caller:          start_timer
+    DebugLoc:        { File: driver.c, Line: 32, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+Function:        stop_timer
+Args:
+  - Callee:          gettimeofday
+  - String:          ' will not be inlined into '
+  - Caller:          stop_timer
+    DebugLoc:        { File: driver.c, Line: 41, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+Function:        stop_timer
+Args:
+  - Callee:          gettimeofday
+  - String:          ' will not be inlined into '
+  - Caller:          stop_timer
+    DebugLoc:        { File: driver.c, Line: 41, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 19 }
+Function:        stop_timer
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 34 }
+Function:        stop_timer
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 20 }
+Function:        stop_timer
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 36 }
+Function:        stop_timer
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 13 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: driver.c, Line: 59, Column: 13 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 30 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            trunc
+    DebugLoc:        { File: driver.c, Line: 59, Column: 30 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            zext
+    DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 90, Column: 5 }
+Function:        printsum
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          printsum
+    DebugLoc:        { File: driver.c, Line: 84, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 90, Column: 5 }
+Function:        printsum
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          printsum
+    DebugLoc:        { File: driver.c, Line: 84, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 107, Column: 5 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+Function:        main
+Args:
+  - Callee:          matvec
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 121, Column: 5 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 122, Column: 5 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 107, Column: 5 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+Function:        main
+Args:
+  - Callee:          matvec
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 121, Column: 5 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: driver.c, Line: 122, Column: 5 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: driver.c, Line: 110, Column: 5 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          init_matrix
+    DebugLoc:        { File: driver.c, Line: 54, Column: 0 }
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '10'
+  - String:          ', threshold='
+  - Threshold:       '225'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '12'
+  - String:          ':'
+  - Column:          '5'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: driver.c, Line: 111, Column: 5 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          init_vector
+    DebugLoc:        { File: driver.c, Line: 71, Column: 0 }
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '-10'
+  - String:          ', threshold='
+  - Threshold:       '225'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '13'
+  - String:          ':'
+  - Column:          '5'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: driver.c, Line: 114, Column: 5 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          start_timer
+    DebugLoc:        { File: driver.c, Line: 32, Column: 0 }
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '10'
+  - String:          ', threshold='
+  - Threshold:       '337'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '16'
+  - String:          ':'
+  - Column:          '5'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: driver.c, Line: 118, Column: 16 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          stop_timer
+    DebugLoc:        { File: driver.c, Line: 41, Column: 0 }
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '70'
+  - String:          ', threshold='
+  - Threshold:       '337'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '20'
+  - String:          ':'
+  - Column:          '16'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: driver.c, Line: 125, Column: 5 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          printsum
+    DebugLoc:        { File: driver.c, Line: 84, Column: 0 }
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '25'
+  - String:          ', threshold='
+  - Threshold:       '225'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '27'
+  - String:          ':'
+  - Column:          '5'
+  - String:          ';'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 116, Column: 31 }
+Function:        main
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: driver.c, Line: 116, Column: 31 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 116, Column: 34 }
+Function:        main
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: driver.c, Line: 116, Column: 34 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 19 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 34 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 20 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 36 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 88, Column: 37 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 122, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 19 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 34 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 20 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 36 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 88, Column: 37 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 122, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 19 }
+Function:        stop_timer
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 34 }
+Function:        stop_timer
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 19 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 34 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 20 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 36 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 19 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 44, Column: 34 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 20 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: driver.c, Line: 45, Column: 36 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ''
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            VectorizedList
+DebugLoc:        { File: driver.c, Line: 44, Column: 26 }
+Function:        stop_timer
+Args:
+  - String:          'SLP vectorized with cost '
+  - Cost:            '-4'
+  - String:          ' and with tree size '
+  - TreeSize:        '5'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+Function:        init_matrix
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 59, Column: 34 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 75, Column: 23 }
+Function:        init_vector
+Args:
+  - String:          'hoisting '
+  - Inst:            insertelement
+    DebugLoc:        { File: driver.c, Line: 75, Column: 23 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: driver.c, Line: 75, Column: 23 }
+Function:        init_vector
+Args:
+  - String:          'hoisting '
+  - Inst:            shufflevector
+    DebugLoc:        { File: driver.c, Line: 75, Column: 23 }
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            VectorizedList
+Function:        main
+Args:
+  - String:          'SLP vectorized with cost '
+  - Cost:            '-4'
+  - String:          ' and with tree size '
+  - TreeSize:        '5'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-14'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-6'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            StoresVectorized
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'Stores SLP vectorized with cost '
+  - Cost:            '-2'
+  - String:          ' and with tree size '
+  - TreeSize:        '2'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: driver.c, Line: 58, Column: 9 }
+Function:        main
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '3'
+  - String:          ' iterations'
+...
+--- !Passed
+Pass:            TTI
+Name:            DontUnroll
+DebugLoc:        { File: driver.c, Line: 115, Column: 5 }
+Function:        main
+Args:
+  - String:          'advising against unrolling the loop because it contains a '
+  - Call:            call
+    DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: driver.c, Line: 88, Column: 5 }
+Function:        main
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '8'
+  - String:          ' iterations'
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: driver.c, Line: 32, Column: 0 }
+Function:        start_timer
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 34, Column: 5 }
+Function:        start_timer
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: driver.c, Line: 32, Column: 0 }
+Function:        start_timer
+Args:
+  - NumInstructions: '3'
+  - String:          ' instructions in function'
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: driver.c, Line: 41, Column: 0 }
+Function:        stop_timer
+Args:
+  - NumStackBytes:   '8'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        stop_timer
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: driver.c, Line: 41, Column: 0 }
+Function:        stop_timer
+Args:
+  - NumInstructions: '11'
+  - String:          ' instructions in function'
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 58, Column: 9 }
+Function:        init_matrix
+Args:
+  - NumSpills:       '23'
+  - String:          ' spills '
+  - TotalSpillsCost: '6.131417e+03'
+  - String:          ' total spills cost '
+  - NumReloads:      '18'
+  - String:          ' reloads '
+  - TotalReloadsCost: '4.798500e+03'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '14'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '3.732167e+03'
+  - String:          ' total folded reloads cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+Function:        init_matrix
+Args:
+  - NumSpills:       '49'
+  - String:          ' spills '
+  - TotalSpillsCost: '6.366750e+03'
+  - String:          ' total spills cost '
+  - NumReloads:      '39'
+  - String:          ' reloads '
+  - TotalReloadsCost: '4.988417e+03'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '30'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '3.876667e+03'
+  - String:          ' total folded reloads cost '
+  - NumVRCopies:     '2'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '2.950000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 53, Column: 1 }
+Function:        init_matrix
+Args:
+  - NumSpills:       '54'
+  - String:          ' spills '
+  - TotalSpillsCost: '6.370417e+03'
+  - String:          ' total spills cost '
+  - NumReloads:      '40'
+  - String:          ' reloads '
+  - TotalReloadsCost: '4.989083e+03'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '30'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '3.876667e+03'
+  - String:          ' total folded reloads cost '
+  - NumVRCopies:     '4'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '3.116667e+01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: driver.c, Line: 54, Column: 0 }
+Function:        init_matrix
+Args:
+  - NumStackBytes:   '504'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '10'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '16'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '131'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 57, Column: 19 }
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 58, Column: 23 }
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '123'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 67, Column: 1 }
+Function:        init_matrix
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: driver.c, Line: 54, Column: 0 }
+Function:        init_matrix
+Args:
+  - NumInstructions: '307'
+  - String:          ' instructions in function'
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 74, Column: 5 }
+Function:        init_vector
+Args:
+  - NumSpills:       '23'
+  - String:          ' spills '
+  - TotalSpillsCost: '2.881765e+02'
+  - String:          ' total spills cost '
+  - NumReloads:      '17'
+  - String:          ' reloads '
+  - TotalReloadsCost: '2.130000e+02'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '14'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '1.754118e+02'
+  - String:          ' total folded reloads cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 70, Column: 1 }
+Function:        init_vector
+Args:
+  - NumSpills:       '50'
+  - String:          ' spills '
+  - TotalSpillsCost: '2.992353e+02'
+  - String:          ' total spills cost '
+  - NumReloads:      '36'
+  - String:          ' reloads '
+  - TotalReloadsCost: '2.207941e+02'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '28'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '1.811765e+02'
+  - String:          ' total folded reloads cost '
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.000000e+00'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: driver.c, Line: 71, Column: 0 }
+Function:        init_vector
+Args:
+  - NumStackBytes:   '312'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 74, Column: 19 }
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 75, Column: 21 }
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '120'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 74, Column: 19 }
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 74, Column: 5 }
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '124'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 80, Column: 1 }
+Function:        init_vector
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: driver.c, Line: 71, Column: 0 }
+Function:        init_vector
+Args:
+  - NumInstructions: '273'
+  - String:          ' instructions in function'
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: driver.c, Line: 84, Column: 0 }
+Function:        printsum
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 88, Column: 16 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 88, Column: 16 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 88, Column: 34 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 88, Column: 34 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 88, Column: 16 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 88, Column: 5 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '15'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 90, Column: 5 }
+Function:        printsum
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: driver.c, Line: 84, Column: 0 }
+Function:        printsum
+Args:
+  - NumInstructions: '49'
+  - String:          ' instructions in function'
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 115, Column: 5 }
+Function:        main
+Args:
+  - NumVRCopies:     '3'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '9.562500e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 57, Column: 5 }
+Function:        main
+Args:
+  - NumSpills:       '91'
+  - String:          ' spills '
+  - TotalSpillsCost: '2.900625e+03'
+  - String:          ' total spills cost '
+  - NumReloads:      '69'
+  - String:          ' reloads '
+  - TotalReloadsCost: '2.199375e+03'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '53'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '1.689375e+03'
+  - String:          ' total folded reloads cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: driver.c, Line: 98, Column: 1 }
+Function:        main
+Args:
+  - NumSpills:       '93'
+  - String:          ' spills '
+  - TotalSpillsCost: '2.902625e+03'
+  - String:          ' total spills cost '
+  - NumReloads:      '69'
+  - String:          ' reloads '
+  - TotalReloadsCost: '2.199375e+03'
+  - String:          ' total reloads cost '
+  - NumFoldedReloads: '54'
+  - String:          ' folded reloads '
+  - TotalFoldedReloadsCost: '1.690375e+03'
+  - String:          ' total folded reloads cost '
+  - NumVRCopies:     '3'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '9.562500e+01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+Function:        main
+Args:
+  - NumStackBytes:   '33656'
+  - String:          ' stack bytes in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '31'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 59, Column: 28 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '469'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 75, Column: 14 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '26'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 116, Column: 9 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: driver.c, Line: 43, Column: 5 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '46'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: driver.c, Line: 99, Column: 0 }
+Function:        main
+Args:
+  - NumInstructions: '580'
+  - String:          ' instructions in function'
+...
