@@ -8,6 +8,7 @@
 // Key constants used in this program
 #define PI acos(-1.0) // Pi
 #define LINE "--------------------\n" // A line for fancy output
+#define NELEMS(x) (sizeof(x)/sizeof((x)[0]))
 
 // Function definitions
 void initial_value(const int n, const double dx, const double length, double * restrict u);
@@ -24,9 +25,11 @@ int main() {
 
   // Problem size, forms an nxn grid
   int n = 22000;
+//     int n = 2200;
 
   // Number of timesteps
   int nsteps = 50;
+//     int nsteps = 5;
 
   // Set problem definition
   //
@@ -61,57 +64,72 @@ int main() {
   if (r > 0.5)
     printf(" Warning: unstable\n");
   printf(LINE);
+    
+//   int omp_threads[5] = {1,2,4,8,16};
+  int omp_threads[1] = {8};
+  for ( int z=0; z<NELEMS(omp_threads); z++ ) {
+      
+    int num_threads = omp_threads[z];
+    omp_set_num_threads(num_threads);
+        
+    printf("OMP #threads: %d\n", num_threads);
 
+    // Allocate two nxn grids
+    double *u     = malloc(sizeof(double)*n*n);
+    double *u_tmp = malloc(sizeof(double)*n*n);
+    double *tmp;
+  
+    // Set the initial value of the grid under the MMS scheme
+    initial_value(n, dx, length, u);
+    zero(n, u_tmp);
+  
+    //
+    // Run through timesteps under the explicit scheme
+    //
 
-  // Allocate two nxn grids
-  double *u     = malloc(sizeof(double)*n*n);
-  double *u_tmp = malloc(sizeof(double)*n*n);
-  double *tmp;
+    double tic, toc;
+//     #pragma omp parallel
+    {
+    // Start the solve timer
+//     #pragma omp single
+    tic = omp_get_wtime();
+    for (int t = 0; t < nsteps; ++t) {
+  
+      // Call the solve kernel
+      // Computes u_tmp at the next timestep
+      // given the value of u at the current timestep
+      solve(n, alpha, dx, dt, u, u_tmp);
+  
+      // Pointer swap
+      tmp = u;
+      u = u_tmp;
+      u_tmp = tmp;
+    }
+    // Stop solve timer
+//     #pragma omp single
+    toc = omp_get_wtime();
+    }
 
-  // Set the initial value of the grid under the MMS scheme
-  initial_value(n, dx, length, u);
-  zero(n, u_tmp);
+    //
+    // Check the L2-norm of the computed solution
+    // against the *known* solution from the MMS scheme
+    //
+    double norm = l2norm(n, u, nsteps, dt, alpha, dx, length);
+  
+    // Stop total timer
+    double stop = omp_get_wtime();
+  
+    // Print results
+    printf("Results\n\n");
+    printf("Error (L2norm): %E\n", norm);
+    printf("Solve time (s): %lf\n", toc-tic);
+    printf("Total time (s): %lf\n", stop-start);
+    printf(LINE);
 
-  //
-  // Run through timesteps under the explicit scheme
-  //
-
-  // Start the solve timer
-  double tic = omp_get_wtime();
-  for (int t = 0; t < nsteps; ++t) {
-
-    // Call the solve kernel
-    // Computes u_tmp at the next timestep
-    // given the value of u at the current timestep
-    solve(n, alpha, dx, dt, u, u_tmp);
-
-    // Pointer swap
-    tmp = u;
-    u = u_tmp;
-    u_tmp = tmp;
+    // Free the memory
+    free(u);
+    free(u_tmp);
   }
-  // Stop solve timer
-  double toc = omp_get_wtime();
-
-  //
-  // Check the L2-norm of the computed solution
-  // against the *known* solution from the MMS scheme
-  //
-  double norm = l2norm(n, u, nsteps, dt, alpha, dx, length);
-
-  // Stop total timer
-  double stop = omp_get_wtime();
-
-  // Print results
-  printf("Results\n\n");
-  printf("Error (L2norm): %E\n", norm);
-  printf("Solve time (s): %lf\n", toc-tic);
-  printf("Total time (s): %lf\n", stop-start);
-  printf(LINE);
-
-  // Free the memory
-  free(u);
-  free(u_tmp);
 }
 
 
@@ -134,8 +152,8 @@ void initial_value(const int n, const double dx, const double length, double * r
 // Zero the array u
 void zero(const int n, double * restrict u) {
 
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
+  for (int j = 0; j < n; ++j) {
+    for (int i = 0; i < n; ++i) {
       u[i+j*n] = 0.0;
     }
   }
@@ -151,8 +169,9 @@ void solve(const int n, const double alpha, const double dx, const double dt, co
   const double r2 = 1.0 - 4.0*r;
 
   // Loop over the nxn grid
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
+  #pragma omp parallel for simd collapse(2) schedule(simd:static)
+  for (int j = 0; j < n; ++j) {
+    for (int i = 0; i < n; ++i) {
 
       // Update the 5-point stencil, using boundary conditions on the edges of the domain.
       // Boundaries are zero because the MMS solution is zero there.

@@ -40,7 +40,8 @@ int main(int argc, char **argv) {
   }
 
   // generate our diagonally dominant matrix, A
-  init_diag_dom_near_identity_matrix(Ndim, A);
+//   init_diag_dom_near_identity_matrix(Ndim, A);
+  init_colmaj_diag_dom_near_identity_matrix(Ndim, A);  // use col-major memory layout for better memory coalescing
 
 #ifdef VERBOSE
   mm_print(Ndim, Ndim, A);
@@ -61,14 +62,16 @@ int main(int argc, char **argv) {
   //
   TYPE conv = LARGE;
   iters = 0;
+#pragma omp target enter data map(to:xold[0:Ndim],xnew[0:Ndim],A[0:Ndim*Ndim],b[0:Ndim])
   while ((conv > TOLERANCE) && (iters < MAX_ITERS)) {
     iters++;
-
+#pragma omp target
+#pragma omp teams distribute parallel for simd schedule(simd:static)
+// #pragma omp loop
     for (int i = 0; i < Ndim; i++) {
       xnew[i] = (TYPE)0.0;
       for (int j = 0; j < Ndim; j++) {
-        if (i != j)
-          xnew[i] += A[i * Ndim + j] * xold[j];
+        xnew[i] += A[j * Ndim + i] * xold[j] * (TYPE)(i != j);  // removed the <if> to reduce the amount of <divergent branches> + change indexing for col-major layout
       }
       xnew[i] = (b[i] - xnew[i]) / A[i * Ndim + i];
     }
@@ -76,6 +79,8 @@ int main(int argc, char **argv) {
     // test convergence
     //
     conv = 0.0;
+#pragma omp target map(tofrom : conv)
+#pragma omp teams distribute parallel for simd reduction(+ : conv)
     for (int i = 0; i < Ndim; i++) {
       TYPE tmp = xnew[i] - xold[i];
       conv += tmp * tmp;
@@ -89,6 +94,7 @@ int main(int argc, char **argv) {
     xold = xnew;
     xnew = tmp;
   }
+#pragma omp target exit data map(from : xold[0 : Ndim], xnew[0 : Ndim])
   elapsed_time = omp_get_wtime() - start_time;
   printf(" Convergence = %g with %d iterations and %f seconds\n", (float)conv,
          iters, (float)elapsed_time);
@@ -104,7 +110,7 @@ int main(int argc, char **argv) {
   for (int i = 0; i < Ndim; i++) {
     xold[i] = (TYPE)0.0;
     for (int j = 0; j < Ndim; j++)
-      xold[i] += A[i * Ndim + j] * xnew[j];
+      xold[i] += A[j * Ndim + i] * xnew[j];  // change indexing for col-major layout
     TYPE tmp = xold[i] - b[i];
 #ifdef DEBUG
     printf(" i=%d, diff = %f,  computed b = %f, input b= %f \n", i, (float)tmp,

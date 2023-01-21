@@ -19,9 +19,10 @@ else
     echo ""
     script=$1
     # Remove old output files
-    rm *.sh.* > /dev/null 2>&1
+    #rm *.sh.* > /dev/null 2>&1
     # Submit job using qsub
-    qsub_id=`qsub -l nodes=1:gpu:ppn=2 -d . $script`
+    #qsub_id=`qsub -l nodes=1:gpu:ppn=2 -d . $script`
+    qsub_id=`qsub -l nodes=1:gen9:ppn=2 -d . $script`
     job_id="$(cut -d'.' -f1 <<<"$qsub_id")"
     # Print qstat output
     qstat 
@@ -47,6 +48,6 @@ else
         cat $script.o$job_id
         cat $script.e$job_id
         echo "Job Completed in $timeout seconds."
-        rm *.sh.*$job_id > /dev/null 2>&1
+        #rm *.sh.*$job_id > /dev/null 2>&1
     fi
 fi

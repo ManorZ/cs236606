@@ -1,0 +1,7 @@
+warning: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+1 warning generated.
+/glob/supplementary-software/versions/vector-add/vector-add-buffers: error while loading shared libraries: libsycl.so.5: cannot open shared object file: No such file or directory
+find: ‘/tmp/trqauthd-unix’: No such file or directory
+find: ‘u177183’ is not the name of a known user
+find: ‘u177183’ is not the name of a known user
+/glob/supplementary-software/versions/vector-add/vector-add-buffers: error while loading shared libraries: libsycl.so.5: cannot open shared object file: No such file or directory

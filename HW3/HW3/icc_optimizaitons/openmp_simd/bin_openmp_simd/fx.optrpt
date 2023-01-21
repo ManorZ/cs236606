@@ -1,0 +1,29 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.8.0 Build 20221119_000000
+
+Compiler options: -O3 -fopenmp -xCORE-AVX512 -qopt-zmm-usage=high -qopt-report=5 -qopt-report-phase=vec -o ./bin_openmp_simd/openmp_simd_pi -diag-disable=10441
+
+Begin optimization report for: f..xN2l(double)
+
+    Report from: Vector optimizations [vec]
+
+remark #15347: FUNCTION WAS VECTORIZED with xmm, simdlen=2, unmasked, formal parameter types: (linear:1) 
+remark #15305: vectorization support: vector length 2
+remark #15475: --- begin vector cost summary ---
+remark #15486: divides: 1 
+remark #15488: --- end vector cost summary ---
+===========================================================================
+
+Begin optimization report for: f..xM2l(double)
+
+    Report from: Vector optimizations [vec]
+
+remark #15347: FUNCTION WAS VECTORIZED with xmm, simdlen=2, masked, formal parameter types: (linear:1) 
+remark #15305: vectorization support: vector length 2
+remark #15475: --- begin vector cost summary ---
+remark #15486: divides: 1 
+remark #15488: --- end vector cost summary ---
+===========================================================================

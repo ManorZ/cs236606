@@ -78,6 +78,7 @@ int main() {
 
   // Start the solve timer
   double tic = omp_get_wtime();
+  #pragma omp target enter data map(to: u[0:n*n], u_tmp[0:n*n])
   for (int t = 0; t < nsteps; ++t) {
 
     // Call the solve kernel
@@ -90,6 +91,7 @@ int main() {
     u = u_tmp;
     u_tmp = tmp;
   }
+  #pragma omp target exit data map(from: u[0:n*n])
   // Stop solve timer
   double toc = omp_get_wtime();
 
@@ -134,8 +136,8 @@ void initial_value(const int n, const double dx, const double length, double * r
 // Zero the array u
 void zero(const int n, double * restrict u) {
 
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
+  for (int j = 0; j < n; ++j) {
+    for (int i = 0; i < n; ++i) {
       u[i+j*n] = 0.0;
     }
   }
@@ -151,8 +153,12 @@ void solve(const int n, const double alpha, const double dx, const double dt, co
   const double r2 = 1.0 - 4.0*r;
 
   // Loop over the nxn grid
-  for (int i = 0; i < n; ++i) {
-    for (int j = 0; j < n; ++j) {
+  #pragma omp target
+  #pragma omp teams distribute parallel for simd collapse(2) schedule(simd:static)
+//   #pragma omp parallel for simd collapse(2) schedule(simd:static)
+//   #pragma omp loop collapse(2)
+  for (int j = 0; j < n; ++j) {
+    for (int i = 0; i < n; ++i) {
 
       // Update the 5-point stencil, using boundary conditions on the edges of the domain.
       // Boundaries are zero because the MMS solution is zero there.
