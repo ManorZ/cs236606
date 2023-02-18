@@ -23,10 +23,12 @@ int main() {
   double start = omp_get_wtime();
 
   // Problem size, forms an nxn grid
-  int n = 22000;
+  //int n = 22000;
+  int n = 12000;
 
   // Number of timesteps
   int nsteps = 50;
+  //int nsteps = 1500;
 
   // Set problem definition
   //
@@ -63,6 +65,7 @@ int main() {
   printf(LINE);
 
 
+  printf("OMP #devices: %d\n", omp_get_num_devices());
   // Allocate two nxn grids
   double *u     = malloc(sizeof(double)*n*n);
   double *u_tmp = malloc(sizeof(double)*n*n);
@@ -136,8 +139,8 @@ void initial_value(const int n, const double dx, const double length, double * r
 // Zero the array u
 void zero(const int n, double * restrict u) {
 
-  for (int j = 0; j < n; ++j) {
-    for (int i = 0; i < n; ++i) {
+  for (int i = 0; i < n; ++i) {
+    for (int j = 0; j < n; ++j) {
       u[i+j*n] = 0.0;
     }
   }
@@ -153,12 +156,13 @@ void solve(const int n, const double alpha, const double dx, const double dt, co
   const double r2 = 1.0 - 4.0*r;
 
   // Loop over the nxn grid
-  #pragma omp target
-  #pragma omp teams distribute parallel for simd collapse(2) schedule(simd:static)
-//   #pragma omp parallel for simd collapse(2) schedule(simd:static)
-//   #pragma omp loop collapse(2)
+  //#pragma omp target teams distribute parallel for simd collapse(2) schedule(simd:static)
+  #pragma omp target teams distribute parallel for simd schedule(simd:static) 
+  //#pragma omp target loop collapse(2)
   for (int j = 0; j < n; ++j) {
     for (int i = 0; i < n; ++i) {
+  //for (int i = 0; i < n; ++i) {
+  //  for (int j = 0; j < n; ++j) {
 
       // Update the 5-point stencil, using boundary conditions on the edges of the domain.
       // Boundaries are zero because the MMS solution is zero there.

@@ -23,12 +23,11 @@ int main() {
   double start = omp_get_wtime();
 
   // Problem size, forms an nxn grid
-  int n = 22000;
-//     int n = 2200;
+  //int n = 22000;
+  int n = 12000;
 
   // Number of timesteps
   int nsteps = 50;
-//     int nsteps = 5;
 
   // Set problem definition
   //

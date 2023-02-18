@@ -40,7 +40,7 @@ int main(int argc, char **argv) {
   }
 
   // generate our diagonally dominant matrix, A
-//   init_diag_dom_near_identity_matrix(Ndim, A);
+  //init_diag_dom_near_identity_matrix(Ndim, A);
   init_colmaj_diag_dom_near_identity_matrix(Ndim, A);  // use col-major memory layout for better memory coalescing
 
 #ifdef VERBOSE
@@ -65,9 +65,7 @@ int main(int argc, char **argv) {
 #pragma omp target enter data map(to:xold[0:Ndim],xnew[0:Ndim],A[0:Ndim*Ndim],b[0:Ndim])
   while ((conv > TOLERANCE) && (iters < MAX_ITERS)) {
     iters++;
-#pragma omp target
-#pragma omp teams distribute parallel for simd schedule(simd:static)
-// #pragma omp loop
+#pragma omp target teams distribute parallel for simd schedule(simd:static)
     for (int i = 0; i < Ndim; i++) {
       xnew[i] = (TYPE)0.0;
       for (int j = 0; j < Ndim; j++) {
